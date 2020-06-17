@@ -1,0 +1,13 @@
+/* Calendar Specific */
+.calLeftNav {
+	color: #310822;
+    line-height: 22px;
+    font-family: "Lato",verdana,Arial,sans-serif;
+    font-size: 0.675rem;
+    border: 1px solid transparent;
+    margin-bottom: -4px;
+    padding-bottom: 0px;
+    vertical-align: text-top;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgb(190, 219, 243));
+    box-shadow: 0 4px 6px 0 rgba(156, 165, 203, 0.59);
+}

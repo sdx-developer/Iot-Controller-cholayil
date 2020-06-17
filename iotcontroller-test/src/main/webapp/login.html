@@ -1,0 +1,192 @@
+<html>
+<title>ServiceDX - Login</title>
+<head>
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+	
+    <link rel="stylesheet" type="text/css" href="assets/css/pagestyles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/1.6073bf0ad0b8d6ebfed7.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bundle.6073bf0ad0b8d6ebfed7.css">
+	<link rel="stylesheet" TYPE="text/css" href="assets/css/ui.min.css" />
+	<link rel="stylesheet" TYPE="text/css" href="assets/css/ui-jennifer.min.css" />
+	<link rel="stylesheet" TYPE="text/css" href="assets/css/grid.min.css" />
+	<link rel="stylesheet" TYPE="text/css" href="assets/css/grid-jennifer.min.css" />
+	
+	<script language="JavaScript" src="assets/js/jquery-3.4.0.js"></script>
+	<script language="JavaScript" src="assets/js/cb-fsss.min.js"></script>
+	
+<script language="JavaScript">
+		var animOn = true;
+		function slideSwitch() {
+		if (animOn){
+			var $active = $('#slideshow IMG.active');
+			if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+			var $next =  $active.next().length ? $active.next()
+				: $('#slideshow IMG:first');
+
+			var $sibs  = $active.siblings();
+			var rndNum = Math.floor(Math.random() * $sibs.length );
+			var $next  = $( $sibs[ rndNum ] );
+			$active.addClass('last-active');
+
+			$next.css({opacity: 0.0}).addClass('active').animate({opacity: 1.0}, 1000, function() {
+				$active.removeClass('active last-active');
+			});
+			
+			$("#dotbgs1").animate({left: Math.floor(Math.random() * ($(window).width()-100)), 
+							top: Math.floor(Math.random() * ($(window).height()-100))},2000);
+			$("#dotbgs2").animate({left: Math.floor(Math.random() * ($(window).width()-100)), 
+							top: Math.floor(Math.random() * ($(window).height()-100))},2000);
+			$("#dotbgs3").animate({left: Math.floor(Math.random() * ($(window).width()-100)), 
+							top: Math.floor(Math.random() * ($(window).height()-100))},2000);
+		}
+	}
+
+	$(function() {
+		setInterval( "slideSwitch()", 5000 );
+	});
+
+	function toggleAnim(srcElem){
+		$(srcElem).toggleClass("on off");
+		if ($(srcElem).hasClass("off")){
+			animOn = false;
+		} else { animOn = true; }
+	}
+</script>
+
+<script>
+
+$(document).ready(function(){
+	$("#loginform").click(function(){
+	     var data = {
+	    	 username: $('#user').val().trim(),
+	    	 password: $('#pwd').val().trim(),
+        
+    };
+		
+	    
+	    $.ajax({
+	    type: "POST",
+	    dataType: 'json',
+		contentType: 'application/json',
+	    url: "/rk/sdx/cds/properties/loginScreen",
+	    data: data,
+	        success: function(msg){
+	        	
+	          if(msg==true){
+	        	   window.location="clientApp-Cholayil.html";
+	        	
+	           }else{
+	        	   alert( "INVALID CREDENTIALS" );
+	        	   window.location="login.html";
+	        	   
+	           }
+	               
+	        }
+	   
+	    })
+	});
+
+	});
+
+
+</script>
+
+
+	
+</head>
+<body class="jui jennifer" style=";background-size: cover;">
+<div id="slideshow">
+
+<img src="assets/imgs/bgs/a1.jpg" class="active">
+<img src="assets/imgs/bgs/a2.jpg">
+<img src="assets/imgs/bgs/a3.jpg">
+<img src="assets/imgs/bgs/a4.jpg">
+<img src="assets/imgs/bgs/a5.jpg">
+<img src="assets/imgs/bgs/a6.jpg">
+<img src="assets/imgs/bgs/a7.jpg">
+<img src="assets/imgs/bgs/a8.jpg">
+<img src="assets/imgs/bgs/a9.jpg">
+<img src="assets/imgs/bgs/a10.jpg">
+<img src="assets/imgs/bgs/a11.jpg">
+<img src="assets/imgs/bgs/a12.jpg">
+<img src="assets/imgs/bgs/a13.jpg">
+<img src="assets/imgs/bgs/a14.jpg">
+
+</div>
+<!-- -35deg, #0ab3e4,#102976 -->
+<div style="position:absolute;height:100vh;width:100vw;background-image: linear-gradient(-35deg, #0ab3e457,#2b0320);filter: alpha(opacity=30);opacity:0.8;">
+	&nbsp;
+</div>
+<div style="position:absolute; top:10px; left:5px;height:100vh;width:100vw;">
+<div style="top:10px; left:5px;">
+	
+</div>
+
+<div id="dotbgs1" class="dotbgs" style="position:absolute;top:500px;right:calc(100%/2 - 315px);">
+</div>
+<div id="dotbgs2" class="dotbgs" style="position:absolute;top:calc(100% - 400px);left:15px;">
+</div>
+<div id="dotbgs3" class="dotbgs" style="position:absolute;top:35px;right:calc(100%/2 - 815px);">
+</div>
+
+<div class="frame-content">
+	
+	<div class="widget-position-right sidebar-position-right">
+	<div style="z-index:999999;position:absolute;left:calc(100%/2 - 175px);top:calc(100%/2 - 210px);">
+		
+		<span class="contentFont" style="color:white"><img src="assets/imgs/icons/DX4-u.png" width="40" height="25" alt="ServiceDX" class="logo"> IOT  Controller </span>
+	</div>
+	
+	<!-- <div style="z-index:999999;position:absolute;left:calc(100% - 125px);top:10px">
+		<span style="color:white">Animation </span>
+		<div style="position:absolute;left:80px;top:8px" id="switchDesc" class="switch inner mini active on" onClick="toggleAnim(this)">
+			<div class="area">
+				<div class="bar"></div>
+			</div>
+			<div class="handle"></div>
+		</div>
+	</div> -->
+	
+	<div class="start-group not-ie chrome no-clip-path no-start-message moveFromRight-enter-done" >
+		<div class="chat-header" style="line-height:10px;background: linear-gradient(125deg, rgb(10, 14, 136) 0%, rgb(0, 177, 206) 100%); color: rgb(255, 255, 255);">
+			
+			<div class="offline-message" style="background-image: linear-gradient(135deg, rgba(10, 14, 136, 0.7) 0%, rgba(0, 177, 206, 0.7) 100%);">
+				<span class="contentFont"></span>
+			</div>
+		</div>
+			<div class="input-group  ">
+			<div class="drag-active-wrapper">
+			<table style="width:100%">
+				<tr>
+					<td style="line-height:25px;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+					<form name="myform"   method="post">
+					
+						<div class="form-group --material">
+						
+						<input type="text" name="text"  id="user"  class="form-control active"  required="required" oninvalid="this.setCustomValidity('username cannot be empty')" onchange="this.setCustomValidity('')" >
+						<label class="contentFont">Username</label>
+						<i style="display:none;" class="icon icon-at"></i></div>
+						<div class="form-group --material">
+						<input type="password" name="password" id="pwd" autocomplete="password" class="form-control active" required="required"oninvalid="this.setCustomValidity('password cannot be empty')" onchange="this.setCustomValidity('')" >
+						<label class="contentFont">Password</label>
+						<i style="display:none;" class="icon icon-lock"></i><br>
+						</div>
+						<div class="form-btn">
+							<button type="submit"  id="loginform" class="bttn bttn-primary bttn-block login__submit">Log In</button>
+						</div>
+					</form>
+					</td>
+				</tr>
+			</table>
+			</div><div class="footer-bottom">
+			
+			</div>
+			</div></div>
+
+</body>
+
+</html>

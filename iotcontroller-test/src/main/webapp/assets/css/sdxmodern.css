@@ -1,0 +1,225 @@
+#rootDiv {
+	width: 100vw;
+    height: 100vh;
+    flex: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row;
+	flex-wrap: wrap; 
+	justify-content: space-around;
+}
+
+#leftDiv {
+	width: 245px;
+    min-width: 245px;
+    height: 100vh;
+    flex: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /*background-color: #f0ffff57;*/
+}
+
+#rightDiv {
+	width: calc(100vw - 252px);
+    height: 100vh;
+    flex: auto;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+	flex-wrap: nowrap; 
+}
+
+.j2t{
+	display: block;
+	width:650px !important;
+}
+/* Legend Styles */
+.legendOfBox {
+	display: block;
+    padding: 4px;
+    border: 1px solid #C3C3C3;
+    background-image: linear-gradient(to top, rgba(255,255,255,1), rgba(249,222,162,0));
+    box-shadow: 0 4px 6px 0 rgb(203, 156, 193);
+}
+.legendOfBox2 {
+	display: block;
+    padding: 4px;
+    border: 1px solid #C3C3C3;
+    background-image: linear-gradient(to top, rgba(83, 81, 198, 0.09), rgb(255, 255, 255));
+    box-shadow: 0 4px 6px 0 rgba(156, 165, 203, 0.59);
+}
+.legendOfBox2Rev {
+	display: block;
+    padding: 4px;
+    border: 1px solid #C3C3C3;
+    background-image: linear-gradient(to bottom, rgba(83, 81, 198, 0.09), rgb(255, 255, 255));
+    box-shadow: 0 4px 6px 0 rgba(156, 165, 203, 0.59);
+}
+
+.stage-bgs {
+	padding: 5px;
+	padding-left:55px;
+    height: 55px;
+    background-image: url(assets/imgs/bgs/bg-dc.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+	background-size: 80px 80px;
+}
+
+/* Used in calendar */
+.legendOfBox3 {
+	display: block;
+    padding: 4px;
+    border: 1px solid #C3C3C3;
+    background-image: linear-gradient(to top, rgba(198, 81, 146, 0.09), rgba(178, 205, 246, 0.4));
+    box-shadow: 0 4px 6px 0 rgba(156, 165, 203, 0.59);
+}
+
+.legendOfBox4 {
+display: block;
+    padding: 4px;
+    border: 1px solid #C3C3C3;
+    background-image: linear-gradient(to top, rgba(81, 198, 85, 0.09), rgba(246, 178, 178, 0.4));
+    box-shadow: 0 4px 6px 0 rgba(156, 165, 203, 0.59);
+}
+
+.legendOfBox5 {
+    display: block;
+    padding: 4px;
+    border: 1px solid #c7cedb;
+    background-image: linear-gradient(to bottom, rgba(198, 81, 189, 0.33), rgba(246, 178, 241, 0.24));
+	background-image: linear-gradient(to bottom, rgba(198, 81, 189, 0.33), rgba(246, 244, 178, 0.24));
+    box-shadow: 0 4px 6px 0 rgba(246, 209, 246, 0.59);
+}
+.legendOfBox6 {
+    display: block;
+    padding: 4px;
+    border: 1px solid #C3C3C3;
+    background-image: linear-gradient(to top, rgba(198, 178, 81, 0.09), rgba(178, 246, 186, 0.4));
+    box-shadow: 0 4px 6px 0 rgba(156, 165, 203, 0.59);
+}
+.legendOfBox7 {
+    display: block;
+    padding: 4px;
+    border: 1px solid #C3C3C3;
+    background-image: linear-gradient(to top, rgba(83, 81, 198, 0.09), rgba(183, 229, 229, 0.34));
+    box-shadow: 0 4px 6px 0 rgba(156, 165, 203, 0.59);
+}
+
+.legendText {
+	font-size:0.725rem;color:#9c4429;
+}
+
+.noBrdTransp {
+	border:0px !important;
+	background:transparent !important;
+}
+
+.rowFlexDiv {
+	display:flex;flex-flow:row;
+}
+.colFlexDiv {
+	width:100%;display:flex;flex-flow:column;height: auto;
+}
+.stage-inner {
+	background-color: #FCFCFC;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-flow: column;
+    height: auto;
+    margin-bottom: -13px;
+}
+.typeSel-left {
+	width: 100%;
+    min-height: 125px;
+    height: auto;
+    vertical-align: top;
+}
+.typeSel-left-inner {
+	height: 100%;
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.legendTitle {
+	display: block;
+    padding: 1px;
+    border: 1px solid rgba(191, 156, 84, 0.18);
+    border-radius: 4px;
+    margin-left: 3px; width: auto; font-size:95%;
+    background-image: linear-gradient(to top, rgba(255,255,255,1), rgba(103, 84, 191, 0.12));
+	background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255, 255, 255, 0.18));
+}
+.templateDDown {
+	background-image: linear-gradient(to bottom, rgba(218,218,218,0), rgba(226,226,226,1));
+    height: 36px;
+    vertical-align: middle;
+    padding-top: 8px;
+    margin-top: -1px;
+    margin: 5px 5px 5px 5px;
+    border-top: 1px solid #ccd1df;
+    border-left: 1px solid #d2c2d7;
+    border-bottom: 1px solid #a9b3d0;
+    border-right: 2px solid #782b904d;
+    border-radius: 5px;
+    padding: 3px 15px;
+    margin-bottom: 25px;
+}
+
+.reportGrid {
+	color: #2944ab;
+    line-height: 22px;
+    font-family: "Lato",verdana,Arial,sans-serif;
+    font-size: 0.675rem;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid #b0abb5;
+    margin-bottom: -4px;
+    padding-bottom: 0px;
+    vertical-align: text-top;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(165, 193, 235, 0.8));
+}
+
+.tagNavStyle {
+	background-image: linear-gradient(to bottom, rgba(254,217,112,0.4), rgba(254,189,76,0.4));
+    margin-left: 0px; padding: 0px;
+    font-family: "Lato",Arial,sans-serif;
+}
+.tagNavStyleSel {
+	background-image: linear-gradient(to bottom, rgba(254,217,112,0.9), rgba(254,189,76,0.9));
+    margin-left: 0px; padding: 0px;
+    font-family: "Lato",Arial,sans-serif;
+}
+.tagBlueNavStyle {
+	background-image: linear-gradient(to bottom, rgba(76, 90, 254, 0.1), rgba(76, 90, 254, 0.51));
+    margin-left: 0px; padding: 0px;
+    font-family: "Lato",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.grid-div {
+    width: 75%;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+    grid-row-gap: 25px;
+    grid-auto-flow: dense;
+    grid-auto-columns: max-content;
+}
+
+.menuLSPanel {
+	position: relative;
+    width: calc(100% + 33px);
+    top: -50px;
+    margin-left: -17px;
+    padding-top: 8px;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(165, 193, 235, 0.8));
+}

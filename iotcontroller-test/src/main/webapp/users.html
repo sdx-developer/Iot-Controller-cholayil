@@ -1,0 +1,369 @@
+<html lang="en" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
+	<meta name="author" content="Bootlab">
+
+	<title>ServiceDX Platform</title>
+	<style> body { opacity: 0; } </style>
+	
+	<script src="assets/js/jquery-3.4.0.js"></script>
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/dataTables.bootstrap4.min.js"></script>
+	<script src="assets/js/renderer.js"></script>
+	<script src="assets/js/formio.full.min.js"></script>
+	
+	<link href="assets/css/modern-formed.css" type="text/css" rel="stylesheet">
+	<link href="assets/css/dataTables.bootstrap4.min.css" type="text/css" rel="stylesheet">
+	
+	<!--For FIO-->
+	<link href="assets/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<link href="assets/css/formio.full.min.css" type="text/css" rel="stylesheet">
+	
+	
+	<script>
+	Formio.icons = 'fontawesome';
+	var pageAria = "user-";
+	
+	function doEdit(idfier){
+		idfier = idfier.replace("uID","");
+		$.ajax({
+			type: 'GET',
+			async: false,
+			dataType: "json",
+			url: "SDX/users/"+idfier, 
+			success: function(result){
+				Formio.icons = 'fontawesome';
+				Formio.createForm(document.getElementById('user-ef'),result);
+			},
+			error: function(error) {
+				console.log("FAIL....================="+error);
+		}});
+	}
+	
+	$(document).ready(function() {
+	
+	$("#datatables-clients").on('click', 'a[role="editor"]', function(e) {
+		$("div[id='"+pageAria+"listing']").hide();
+		$("div[id='"+pageAria+"editing']").show();
+		doEdit($(this).attr("id"));
+	});
+	
+    $('#datatables-clients').DataTable( {
+        "ajax": {
+            "url": "SDX/users",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "picture" },
+            { "data": "fName" },
+            { "data": "lName" },
+            { "data": "duty" },
+            { "data": "company" },
+            { "data": "email" },
+            { "data": "phone" }
+			],
+			"columnDefs": [ {
+				"targets": 0,
+				"data": "picture",
+				"render": function ( data, type, row, meta ) {
+				  if (data=="none"){data = "User.png";	}
+				  return '<img src="assets/images/avatars/'+data+'" width="32" height="32" class="rounded-circle my-n1" alt="'+data+'">';
+				}
+			  }, {
+				"targets": 1,
+				"data": "fName",
+				"render": function ( data, type, row, meta ) {
+				  return '<a role="editor" href="#" id="uID'+row['_id']+'">'+data+"</a>";
+				}
+			  } ]
+		} );
+		} );
+	</script>
+
+</head>
+
+<body>
+	<div style="position:absolute">
+		<img src="assets/images/bgs/bg-6.png" style="height: 100vh;width: 100vw;background-position: bottom center; background-size: cover; background-repeat: no-repeat; margin-left: -35px;">
+	</div>
+	<div class="splash">
+		<div class="splash-icon"></div>
+	</div>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<a class="sidebar-brand" href="index.html">
+			<img src="assets/images/logos/test6.png" class="img-fluid rounded-circle mb-2" alt="Linda Miller">
+		  
+        </a>
+			<div class="sidebar-content">
+				<div class="sidebar-user">
+					<img src="assets/images/avatars/RamK2.png" class="img-fluid rounded-circle mb-2" alt="Linda Miller">
+					<div class="font-weight-bold">Ram Karuthapandian</div>
+					<small>Architect</small>
+				</div>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Main
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="mainpage.html">
+							<i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">Dashboard</span>
+						</a>
+					</li>
+					<li class="sidebar-header">
+						Resource Management
+					</li>
+					
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="users.html">
+							<i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">User</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<ul id="pages" class="sidebar-dropdown list-unstyled collapse show" data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="depts.html">Department</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-clients.html">Group</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-clients.html">Calendar</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-settings.html">Settings</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-header">
+						Event Management
+					</li>
+					<li class="sidebar-item">
+						<a href="#ui" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle mr-2 fas fa-fw fa-flask"></i> <span class="align-middle">Applications</span>
+						</a>
+						<ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-alerts.html">Alerts</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Buttons</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#tables" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle mr-2 fas fa-fw fa-table"></i> <span class="align-middle">Assets</span>
+						</a>
+						<ul id="tables" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="tables-bootstrap.html">Bootstrap</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="tables-datatables.html">DataTables</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-header">
+						Realtime
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="documentation.html">
+							<i class="align-middle mr-2 fas fa-fw fa-book"></i> <span class="align-middle">Notice Board</span>
+						</a>
+						<a class="sidebar-link" href="documentation.html">
+							<i class="align-middle mr-2 fas fa-fw fa-book"></i> <span class="align-middle">Event Desk</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="main" style="margin-top:-25px">
+			<nav class="navbar navbar-expand navbar-theme" style="margin-top:25px;width:80vw;position:absolute;border:0px solid red">
+				<a class="sidebar-toggle d-flex mr-2">
+					<i class="hamburger align-self-center"></i>
+				</a>
+				<form class="form-inline d-none d-sm-inline-block" style="margin-top:12px;">
+					<input class="form-control form-control-lite" type="text" placeholder="Search SDX ...">
+				</form>
+				<div class="navbar-collapse collapse" style="">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle position-relative" href="#" id="messagesDropdown" data-toggle="dropdown">
+								<i class="align-middle fas fa-envelope-open"></i>
+							  </a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										4 New Messages
+									</div>
+								</div>
+								
+							</div>
+						</li>
+						<li class="nav-item dropdown ml-lg-2">
+							<a class="nav-link dropdown-toggle position-relative" href="#" id="alertsDropdown" data-toggle="dropdown">
+								<i class="align-middle fas fa-bell"></i>
+								<span class="indicator"></span>
+							</a>
+							
+						</li>
+					</ul>
+				</div>
+
+			</nav>
+			<main class="content" >
+				<div class="container-fluid" style="min-height:75vh!important">
+					<div class="header" style="margin-top:125px;max-height:35px;height:35px">
+						<h1 class="header-title"> Users</h1>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Users</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="row">
+						<div class="col-xxl-9">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-actions float-right">
+										<a href="#" class="mr-1">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw align-middle"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+										  </a>
+										<div class="d-inline-block dropdown show">
+											<a href="#" data-toggle="dropdown" data-display="static">
+											  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical align-middle"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+											</a>
+
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div>
+									<h5 class="card-title mb-0">Users</h5>
+								</div>
+								<div id="user-listing" class="card-body">
+									<table id="datatables-clients" class="table table-striped dataTable no-footer dtr-inline" style="width:100%">
+										<thead>
+											<tr>
+												<th>Avatar</th>
+												<th>First name</th>
+												<th>Last name</th>
+												<th>Designation</th>
+												<th>Organization</th>
+												<th>Email</th>
+												<th>Phone</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								
+								<div id="user-editing" action-mode="" class="card-body" style="display:none;">
+									<form id="user-ef">
+										<div class="form-group">
+											<label class="form-label">Email address</label>
+											<input type="email" class="form-control" placeholder="Email">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Password</label>
+											<input type="password" class="form-control" placeholder="Password">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Textarea</label>
+											<textarea class="form-control" placeholder="Textarea" rows="1"></textarea>
+										</div>
+										<div class="form-group">
+											<label class="form-label w-100">File input</label>
+											<input type="file">
+											<small class="form-text text-muted">Example block-level help text here.</small>
+										</div>
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</form>
+								</div>
+								
+							</div>
+						</div>
+						
+
+
+						<div class="col-xxl-3">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-actions float-right">
+										<a href="#" class="mr-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw align-middle"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                  </a>
+										<div class="d-inline-block dropdown show">
+											<a href="#" data-toggle="dropdown" data-display="static">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical align-middle"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                    </a>
+
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div>
+									<h5 class="card-title mb-0">Ram Karuthapandian</h5>
+								</div>
+								<div class="card-body">
+									<div class="row no-gutters">
+										<div class="col-sm-3 col-xl-12 col-xxl-4 text-center">
+											<img src="assets/images/avatars/RamK2.png" width="64" height="64" class="rounded-circle mt-2" alt="Ram K">
+										</div>
+										<div class="col-sm-9 col-xl-12 col-xxl-8">
+											<strong>About me</strong>
+											<p>IT Experience : 14 years<br>Technologies : Java/J2EE, Enterprise Architect, Groovy, Scala, Javers, Python, R</p>
+										</div>
+									</div>
+
+									<table class="table table-sm my-2">
+										<tbody>
+											<tr> <th>Name</th> <td>Ramakannan Karuthapandian</td> </tr>
+											<tr> <th>Company</th> <td>SiviSoft Inc.</td> </tr>
+											<tr> <th>Occupation</th> <td>Head - Architecture & Technology</td> </tr>
+											<tr> <th>Email</th> <td>ramk@sivisoft.com</td> </tr>
+											<tr> <th>Phone</th> <td>+91 90039 85106</td> </tr>
+											<tr> <th>Website</th> <td>SiviSoft.com</td> </tr>
+											<tr> <th>Status</th> <td><span class="badge badge-success">Active</span></td> </tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-8 text-left">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms of Service</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Contact</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-4 text-right">
+							<p class="mb-0">
+								© 2019 - <a href="dashboard.html" class="text-muted">Spark</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+	</div>
+
+	<svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol viewBox="0 0 512 512" id="ion-ios-pulse-strong">
+        <path d="M448 273.001c-21.27 0-39.296 13.999-45.596 32.999h-38.857l-28.361-85.417a15.999 15.999 0 0 0-15.183-10.956c-.112 0-.224 0-.335.004a15.997 15.997 0 0 0-15.049 11.588l-44.484 155.262-52.353-314.108C206.535 54.893 200.333 48 192 48s-13.693 5.776-15.525 13.135L115.496 306H16v31.999h112c7.348 0 13.75-5.003 15.525-12.134l45.368-182.177 51.324 307.94c1.229 7.377 7.397 11.92 14.864 12.344.308.018.614.028.919.028 7.097 0 13.406-3.701 15.381-10.594l49.744-173.617 15.689 47.252A16.001 16.001 0 0 0 352 337.999h51.108C409.973 355.999 427.477 369 448 369c26.511 0 48-22.492 48-49 0-26.509-21.489-46.999-48-46.999z">
+        </path>
+      </symbol>
+    </defs>
+  </svg>
+	
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><div class="jvectormap-tip"></div></body></html>

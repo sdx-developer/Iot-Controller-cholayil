@@ -1,0 +1,354 @@
+**** accordion-toggle                   --> 
+**** applyBtn                           --> 
+**** cancelBtn                          --> 
+**** chartjs-render-monitor             --> 
+**** chartjs-size-monitor               --> 
+**** chartjs-size-monitor-expand        --> 
+**** chartjs-size-monitor-shrink        --> 
+**** custom-controls-stacked            --> 
+**** datepicker                         --> 
+**** datepicker-days                    --> 
+**** datepicker-decades                 --> 
+**** datepicker-months                  --> 
+**** datepicker-years                   --> 
+**** decade                             --> 
+**** dropdown-wrapper                   --> 
+**** dt-bootstrap4                      --> 
+**** dtr-inline                         --> 
+**** feather-dollar-sign                --> 
+**** feather-more-vertical              --> 
+**** feather-refresh-cw                 --> 
+**** feather-shopping-cart              --> 
+**** feather-truck                      --> 
+**** feather-users                      --> 
+**** font-13                            --> 
+**** img-responsive                     --> 
+**** jvectormap-element                 --> 
+**** jvectormap-region                  --> 
+**** no-footer                          --> 
+**** paginate_button                    --> 
+**** paging_simple_numbers              --> 
+**** previous                           --> 
+**** sorting_1                          --> 
+**** table-condensed                    --> 
+**** undefined                          --> 
+**** validation-file                    --> 
+**** weekend                            --> 
+
+
+active                                  --> 
+align-items-center                      --> 
+align-middle                            --> 
+align-self-center                       --> 
+auto-apply                              --> 
+avatar                                  --> 
+badge                                   --> 
+badge-danger                            --> 
+badge-info                              --> 
+badge-pill                              --> 
+badge-primary                           --> 
+badge-success                           --> 
+badge-warning                           --> 
+bg-danger                               --> 
+bg-primary                              --> 
+bg-success                              --> 
+bg-warning                              --> 
+bootstrap-datetimepicker-widget         --> 
+breadcrumb                              --> 
+breadcrumb-item                         --> 
+btn                                     --> 
+btn-default                             --> 
+btn-primary                             --> 
+btn-sm                                  --> 
+calendar-table                          --> 
+calendar-time                           --> 
+card                                    --> 
+card-actions                            --> 
+card-body                               --> 
+card-header                             --> 
+card-subtitle                           --> 
+card-title                              --> 
+chart                                   --> 
+chart-lg                                --> 
+chart-sm                                --> 
+chart-xs                                --> 
+col-10                                  --> 
+col-12                                  --> 
+col-2                                   --> 
+col-4                                   --> 
+col-8                                   --> 
+col-form-label                          --> 
+col-lg-4                                --> 
+col-lg-5                                --> 
+col-lg-6                                --> 
+col-lg-7                                --> 
+col-lg-8                                --> 
+col-md-12                               --> 
+col-md-2                                --> 
+col-md-3                                --> 
+col-md-4                                --> 
+col-md-5                                --> 
+col-md-6                                --> 
+col-md-7                                --> 
+col-md-8                                --> 
+col-md-9                                --> 
+col-sm-10                               --> 
+col-sm-12                               --> 
+col-sm-2                                --> 
+col-sm-3                                --> 
+col-sm-6                                --> 
+col-sm-9                                --> 
+col-xl-10                               --> 
+col-xl-12                               --> 
+col-xl-2                                --> 
+col-xl-4                                --> 
+col-xl-5                                --> 
+col-xl-6                                --> 
+col-xl-7                                --> 
+col-xl-8                                --> 
+col-xxl-3                               --> 
+col-xxl-4                               --> 
+col-xxl-6                               --> 
+col-xxl-8                               --> 
+col-xxl-9                               --> 
+collapse                                --> 
+collapsed                               --> 
+container-fluid                         --> 
+content                                 --> 
+custom-checkbox                         --> 
+custom-control                          --> 
+custom-control-input                    --> 
+custom-control-label                    --> 
+custom-radio                            --> 
+custom-select                           --> 
+custom-select-sm                        --> 
+d-block                                 --> 
+d-flex                                  --> 
+d-inline-block                          --> 
+d-none                                  --> 
+d-sm-inline-block                       --> 
+d-xl-table-cell                         --> 
+dataTable                               --> 
+dataTables_filter                       --> 
+dataTables_info                         --> 
+dataTables_length                       --> 
+dataTables_paginate                     --> 
+dataTables_wrapper                      --> 
+daterangepicker                         --> 
+day                                     --> 
+disabled                                --> 
+dow                                     --> 
+dropdown                                --> 
+dropdown-divider                        --> 
+dropdown-item                           --> 
+dropdown-menu                           --> 
+dropdown-menu-footer                    --> 
+dropdown-menu-header                    --> 
+dropdown-menu-lg                        --> 
+dropdown-menu-right                     --> 
+dropdown-toggle                         --> 
+drp-buttons                             --> 
+drp-calendar                            --> 
+drp-selected                            --> 
+even                                    --> 
+fa-arrow-alt-circle-right               --> 
+fa-bell                                 --> 
+fa-bell-slash                           --> 
+fa-book                                 --> 
+fa-building                             --> 
+fa-calendar                             --> 
+fa-calendar-alt                         --> 
+fa-caret-down                           --> 
+fa-chart-pie                            --> 
+fa-check-square                         --> 
+fa-chevron-left                         --> 
+fa-chevron-right                        --> 
+fa-cog                                  --> 
+fa-cogs                                 --> 
+fa-comments                             --> 
+fa-desktop                              --> 
+fa-envelope-open                        --> 
+fa-file                                 --> 
+fa-flask                                --> 
+fa-fw                                   --> 
+fa-heart                                --> 
+fa-home                                 --> 
+fa-map-marker-alt                       --> 
+fa-sign-in-alt                          --> 
+fa-square-full                          --> 
+fa-table                                --> 
+fa-upload                               --> 
+fa-user                                 --> 
+fade                                    --> 
+far                                     --> 
+fas                                     --> 
+feather                                 --> 
+flex-fill                               --> 
+float-right                             --> 
+font-weight-bold                        --> 
+footer                                  --> 
+form-check                              --> 
+form-check-input                        --> 
+form-check-label                        --> 
+form-control                            --> 
+form-control-lite                       --> 
+form-control-sm                         --> 
+form-group                              --> 
+form-inline                             --> 
+form-label                              --> 
+form-row                                --> 
+form-text                               --> 
+hamburger                               --> 
+header                                  --> 
+header-subtitle                         --> 
+header-title                            --> 
+hljs                                    --> 
+hljs-attr                               --> 
+hljs-meta                               --> 
+hljs-name                               --> 
+hljs-string                             --> 
+hljs-tag                                --> 
+html                                    --> 
+icon                                    --> 
+icon-danger                             --> 
+icon-primary                            --> 
+icon-success                            --> 
+icon-warning                            --> 
+img-fluid                               --> 
+indicator                               --> 
+input-group                             --> 
+input-group-prepend                     --> 
+input-group-text                        --> 
+jvectormap-container                    --> 
+jvectormap-legend-cnt                   --> 
+jvectormap-legend-cnt-h                 --> 
+jvectormap-legend-cnt-v                 --> 
+jvectormap-tip                          --> 
+jvectormap-zoomin                       --> 
+jvectormap-zoomout                      --> 
+lead                                    --> 
+left                                    --> 
+list-group                              --> 
+list-group-flush                        --> 
+list-group-item                         --> 
+list-group-item-action                  --> 
+list-inline                             --> 
+list-inline-item                        --> 
+list-unstyled                           --> 
+ltr                                     --> 
+m-0                                     --> 
+main                                    --> 
+mb-0                                    --> 
+mb-1                                    --> 
+mb-2                                    --> 
+mb-3                                    --> 
+mb-xl-0                                 --> 
+ml-1                                    --> 
+ml-auto                                 --> 
+ml-lg-2                                 --> 
+ml-sm-auto                              --> 
+month                                   --> 
+mr-1                                    --> 
+mr-2                                    --> 
+mr-sm-2                                 --> 
+mt-1                                    --> 
+mt-2                                    --> 
+my-0                                    --> 
+my-2                                    --> 
+my-3                                    --> 
+my-n1                                   --> 
+nav-item                                --> 
+nav-link                                --> 
+navbar                                  --> 
+navbar-collapse                         --> 
+navbar-expand                           --> 
+navbar-nav                              --> 
+navbar-theme                            --> 
+new                                     --> 
+next                                    --> 
+no-gutters                              --> 
+odd                                     --> 
+old                                     --> 
+opensleft                               --> 
+opensright                              --> 
+order-1                                 --> 
+order-2                                 --> 
+order-3                                 --> 
+order-xxl-1                             --> 
+order-xxl-2                             --> 
+order-xxl-3                             --> 
+overflow-hidden                         --> 
+page-item                               --> 
+page-link                               --> 
+pagination                              --> 
+picker-switch                           --> 
+pl-2                                    --> 
+position-relative                       --> 
+prev                                    --> 
+pt-sm-0                                 --> 
+px-4                                    --> 
+py-0                                    --> 
+py-3                                    --> 
+ranges                                  --> 
+right                                   --> 
+rounded-circle                          --> 
+row                                     --> 
+select2                                 --> 
+select2-container                       --> 
+select2-container--below                --> 
+select2-container--bootstrap4           --> 
+select2-hidden-accessible               --> 
+select2-search                          --> 
+select2-search--inline                  --> 
+select2-search__field                   --> 
+select2-selection                       --> 
+select2-selection--multiple             --> 
+select2-selection--single               --> 
+select2-selection__arrow                --> 
+select2-selection__placeholder          --> 
+select2-selection__rendered             --> 
+selection                               --> 
+show                                    --> 
+show-calendar                           --> 
+show-ranges                             --> 
+sidebar                                 --> 
+sidebar-badge                           --> 
+sidebar-brand                           --> 
+sidebar-content                         --> 
+sidebar-dropdown                        --> 
+sidebar-header                          --> 
+sidebar-item                            --> 
+sidebar-link                            --> 
+sidebar-nav                             --> 
+sidebar-toggle                          --> 
+sidebar-user                            --> 
+single                                  --> 
+small                                   --> 
+snippet                                 --> 
+sorting                                 --> 
+sorting_asc                             --> 
+splash                                  --> 
+splash-icon                             --> 
+sr-only                                 --> 
+tab-content                             --> 
+tab-pane                                --> 
+table                                   --> 
+table-sm                                --> 
+table-striped                           --> 
+text-center                             --> 
+text-danger                             --> 
+text-dark                               --> 
+text-left                               --> 
+text-muted                              --> 
+text-primary                            --> 
+text-right                              --> 
+text-sm-right                           --> 
+text-success                            --> 
+text-warning                            --> 
+text-white                              --> 
+today                                   --> 
+usetwentyfour                           --> 
+w-100                                   --> 
+wrapper                                 --> 
+xml                                     --> 
+year                                    --> 

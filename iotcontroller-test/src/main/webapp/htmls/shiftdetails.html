@@ -1,0 +1,40 @@
+<div class="row" style="min-height:525px!important">
+	<script>
+	jui.ready([ "ui.property" ], function(PropertyView) {
+		var response = $.ajax({ type: "GET",   
+			url: "/rk/sdx/cds/properties/shiftDetails",   
+			async: false, dataType : "text"
+		}).responseText;
+console.log("JKJKJKJKJKJKJK");
+		window.prSettings = new PropertyView('#pr-settings', JSON.parse(response));
+		window.prSettings.on("change", function(item, newValue, oldValue){
+		});
+	});
+	
+	</script>
+	<div class="col-12 col-lg-8 col-xxl-12 d-flex" style="flex-direction:column;">
+		<div class="card flex-fill jui jennifer">
+			<div class="card-header">
+				<div class="card-actions float-right">
+					<a href="#" class="mr-1">
+						<!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="23 4 23 10 17 10"></polyline>
+							<polyline points="1 20 1 14 7 14"></polyline>
+							<path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+						</svg> -->
+					</a>
+				</div>
+				<h5 class="card-title mb-0">Shift Settings</h5>
+			</div>
+			<div id="pr-settings" class="property"></div>
+		</div>
+		<div class="mb-3">
+		<script>
+        function myFunction() {
+        	window.location.href = "clientApp-Cholayil.html";
+        }
+        </script>
+			<button id="update_run_shiftproperties" class="btn btn-primary btn-sm" onclick="myFunction()">Execute</button>
+		</div>
+	</div>
+</div>

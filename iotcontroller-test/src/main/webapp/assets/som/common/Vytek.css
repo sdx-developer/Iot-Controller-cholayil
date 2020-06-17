@@ -1,0 +1,83 @@
+.Mandatory, TR.Mandatory, TD.Mandatory {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt
+}
+
+.Optional, TR.Optional, TD.Optional {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10pt
+}
+
+.Title1, TR.Title1, TD.Title1 {
+    BACKGROUND-COLOR: #CCCCCC;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 16pt;
+    COLOR: #666699
+}
+
+.Title2, TR.Title2, TD.Title2 {
+    BACKGROUND-COLOR: #666699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12pt;
+    COLOR: #CCCCCC
+}
+
+.LeftMenu, TR.LeftMenu, TD.LeftMenu {
+    BACKGROUND-COLOR: #666699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12pt;
+	LINE-HEIGHT: 25px;
+    COLOR: #FFFFEE
+}
+
+.LeftMenuSel, TR.LeftMenuSel, TD.LeftMenuSel {
+    BACKGROUND-COLOR: #FFFFCC;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12pt;
+	LINE-HEIGHT: 25px;
+    COLOR: #000000
+}
+
+A.LeftMenu:link    {text-decoration: underline; FONT-SIZE: 12pt; font-weight: normal; color: #FFFFEE}
+A.LeftMenu:visited {text-decoration: underline; FONT-SIZE: 12pt; font-weight: normal; color: #FFFFEE}
+A.LeftMenu:active  {text-decoration: underline; FONT-SIZE: 12pt; font-weight: normal; color: #FFCCCC}
+A.LeftMenu:hover   {text-decoration: underline; FONT-SIZE: 12pt; font-weight: normal; color: #FFFFCC}
+
+.LeftSubMenu, TR.LeftSubMenu, TD.LeftSubMenu {
+    BACKGROUND-COLOR: #666699;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10pt;
+	LINE-HEIGHT: 20px;
+    COLOR: #FFFFEE
+}
+
+.LeftSubMenuSel, TR.LeftSubMenuSel, TD.LeftSubMenuSel {
+    BACKGROUND-COLOR: #FFFFCC;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10pt;
+	LINE-HEIGHT: 25px;
+    COLOR: #000000
+}
+
+A.LeftSubMenu:link    {text-decoration: underline; FONT-SIZE: 10pt; font-weight: normal; color: #FFFFEE}
+A.LeftSubMenu:visited {text-decoration: underline; FONT-SIZE: 10pt; font-weight: normal; color: #FFFFEE}
+A.LeftSubMenu:active  {text-decoration: underline; FONT-SIZE: 10pt; font-weight: normal; color: #FFCCCC}
+A.LeftSubMenu:hover   {text-decoration: underline; FONT-SIZE: 10pt; font-weight: normal; color: #FFFFCC}
+
+.TopMenu, TR.TopMenu, TD.TopMenu {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10pt;
+    COLOR: #666699
+}
+
+.TopMenuSel, TR.TopMenuSel, TD.TopMenuSel {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10pt;
+    COLOR: #666666
+}
+
+A.TopMenu:link    {text-decoration: underline; FONT-SIZE: 10pt; font-weight: normal; color: #0000FF}
+A.TopMenu:visited {text-decoration: underline; FONT-SIZE: 10pt; font-weight: normal; color: #990099}
+A.TopMenu:active  {text-decoration: underline; FONT-SIZE: 10pt; font-weight: normal; color: #CC0000}
+A.TopMenu:hover   {text-decoration: underline; FONT-SIZE: 10pt; font-weight: normal; color: #CC0000}

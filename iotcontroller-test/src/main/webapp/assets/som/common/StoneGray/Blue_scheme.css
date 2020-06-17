@@ -1,0 +1,2420 @@
+/***************************************************************************************/
+/* This css basically implemented for FISWMS */
+/* Main Menu - This comprises of the User Management, Schedule Management */
+/* Sub Menu - This comprises of the User, Group, Department, Destination */
+/****************************************************************************************/
+/* Default body background color */
+
+html, body { height: 100% }
+
+BODY {
+    background-color: #FFFFFF;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;height: 100%;
+}
+
+.loginBody {
+    background-color: #FFFFFF;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;height: 100%;
+    background-image: url(../../images/mace-bgs.jpg);
+}
+
+BODY_TopFrame {
+margin-top: 0;
+margin-right: 0;
+margin-bottom: 0;
+margin-left: 0;
+}
+
+/* Subscription New Tryout */
+.layBox {
+    box-shadow: 0 8px 24px 0 rgb(203, 156, 193);
+    background-color: white;
+    font-size: 14px;
+    border-left: 5px solid #cfb6cb;
+    border-top: 1px solid #e3beef;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e3beef;
+    border-right: 1px solid #cfb6cb;
+}
+.layBox_highlight {
+    box-shadow: 0 8px 24px 0 rgb(203, 156, 193);
+    background-color: white;
+    font-size: 14px;
+    border-left: 5px solid #782b90;
+    border-top: 1px solid #aea8b0;
+    border-radius: 5px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #f7d791;
+    border-right: 1px solid #aea8b0;
+	background-image: linear-gradient(to top, rgba(255,255,255,1), rgba(249,222,162,0));
+}
+
+.layBox_inner {
+	width: 100%; margin-left: 0px; margin-top:0px;
+    background-image: linear-gradient(to top, rgba(218,218,218,0), rgba(226,226,226,1));
+}
+
+.layBox_inner_highlight {
+	background-image: url(../../images/subsBgs.png);
+}
+
+.templateDDown {
+	background-image: linear-gradient(to bottom, rgba(218,218,218,0), rgba(226,226,226,1));
+    height: 36px;
+    vertical-align: middle;
+    padding-top: 8px;
+    margin-top: -1px;
+    margin: 5px 5px 5px 5px;
+    border-top: 1px solid #ccd1df;
+    border-left: 1px solid #d2c2d7;
+    border-bottom: 1px solid #a9b3d0;
+    border-right: 2px solid #782b904d;
+    border-radius: 5px;
+    padding: 3px 15px;
+    margin-bottom: 25px;
+}
+
+.icon-forward {
+	content: url(../../images/nav/right-swapbull.png);
+}
+.icon-backward {
+	content: url(../../images/nav/left-swapbull.png);
+}
+.preview-add {
+	content: url(../../images/preview_add.png);
+}
+
+
+/* Responsive */
+.highlighting {
+    box-shadow: 0 8px 24px 0 rgb(203, 156, 193);
+    background-color: white;
+    font-size: 14px;
+    border-left: 5px solid #782b90;
+    border-top: 1px solid #e3beef;
+    border-radius: 5px;
+    padding: 3px 15px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e3beef;
+    border-right: 2px solid #782b904d;
+}
+
+.aboutContent {
+    font-size: 11.5px;
+    font-family: Calibiri, verdana;
+    border-top: 1px solid #e3beef;
+    border-top: 1px solid #e3beef;
+    background-color: #fdeeee;
+    margin-left: -15px;
+    margin-right: -13px;
+    margin-bottom: -2.8px;
+    padding: 5px;
+}
+
+@media (min-width: 768px)
+.col-sm-6 {
+    width: 50%;
+}
+.highlighting.highlighting-scale {
+    margin-bottom: 100px;
+}
+.highlighting {
+    padding-top: 0px;
+    margin-bottom: 15px;
+	font-size: 11.2px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    color: #514b43;
+}
+
+@media (min-width: 1200px)
+.container {
+    width: 1170px;
+}
+@media (min-width: 992px)
+.container {
+    width: 970px;
+}
+@media (min-width: 768px)
+.container {
+    width: 750px;
+}
+
+
+/* Default font face & size of the table td & th */
+TD, TH{
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+/* Default anchor properties */
+a {
+text-decoration: underline;
+color: blue
+}
+a:hover {
+color: #f591f7;
+text-decoration: none;
+font-weight: normal
+}
+
+/* Default Form Element Type = 'text' properties */
+INPUT {
+background: #ffffff;
+color: #000000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* Default Form Element Type = 'textarea' properties */
+TEXTAREA {
+background: #ffffff;
+color: #000000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+border: 1px solid #999999;
+}
+
+/* Default Form Element Type = 'select' properties */
+SELECT {
+background: #ffffff;
+color: #000000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* For submenu pipe seperator [|] in between all the menu items */
+.pipe {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #f8f8f8;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* In FISWMS edit screens all the edit labels rows & columns are implemented with this class */
+
+.bodycolor {
+background: #F4EDF5;
+}
+
+.bodycolor_dashboard {
+	background: #F4EDF5;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+
+}
+
+.bodycolor_Optional {
+background: #264468;
+}
+
+
+/**/
+.input_request {
+font-weight: bold
+}
+
+
+/************** Gray color #e7e7e7 button ***************/
+.butts_666666 {
+background: #e7e7e7;
+color: #000000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 7pt;
+font-weight: normal
+}
+
+/* Button class on the view screens */
+
+.purple_butts {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	color: #FFFFFF;
+	background-color: #6273A2;
+	border: 1px solid #CCCCCC;
+
+}
+
+
+/* Used for the Login screen bars */
+
+.purple_bar {
+background: #62628A;
+color: white;
+font-size: 10.8px;
+font-weight: bold;
+text-align: center
+}
+
+/* Login Screen */
+
+
+.Auto_Login {
+background: #b6cff3;
+}
+
+.Login_To {
+
+color: #ffffff;
+font-size: 13px;
+font-weight: bold;
+text-align: center
+}
+
+.Login_TextAreas {
+
+background: #ffffff;
+color: #000000;
+font-size: 10.8px;
+border: 1px solid #999999;
+
+}
+
+
+.Login_bttn {
+	color: #000000;
+	font-size: 10.8px;
+	font-weight: none;
+	text-decoration: none;
+
+
+}
+.CopyRight {
+
+background-image: url(images/bottom_bg.gif);
+color: #ffffff;
+font-size: 11px;
+font-weight: bold;
+
+}
+
+
+/* Used for the Login screen info in the bars */
+
+.Body_Background {
+background: #F4EDF5;
+}
+
+.Body_Table_Outer {
+	background: #708399;
+	border-radius:5px 5px 0px 0px;
+}
+
+/* Text Area Style with Border */
+
+.TextAreas {
+background: #ffffff;
+color: #000000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+border: 1px solid #999999;
+}
+
+
+/* Info Buttons */
+
+.purple_info {
+/* background: #62628A; */
+color: #000000;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+.FFFFFF_info {
+/* background: #62628A; */
+color: #ffffff;
+font-size: 10.8px;
+font-weight: normal;
+text-decoration: none;
+}
+
+.FFFFFF_info_HOver {
+/* background: #676E7D; */
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #ffffff;
+font-size: 10.8px;
+font-weight: normal;
+text-decoration: underline;
+}
+
+
+.006699_info_8 {
+
+color: #006699;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+.000033_info {
+/* background: #62628A; */
+color: #000000;
+font-size: 11px;
+font-weight: none;
+}
+
+.006699_info {
+
+color: #006699;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+
+.000033_info_11 {
+/* background: #62628A; */
+color: #000000;
+font-size: 11px;
+font-weight: none
+}
+
+
+/* Error message display in login page */
+.login_error {
+color: red;
+font-size: 10.8px;
+font-family: Verdana, Geneva, Helvetica, sans-serif;
+font-weight: bold
+}
+
+/* Classes for Mainmenu labels */
+
+/* For the non active main menu */
+.non_active_toolbar {
+background: #C3BCBE;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/* For the active main menu */
+.active_toolbar {
+background: #FFFFD3;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/* Classes for Submenu labels */
+
+/* For an active submenu */
+.subnav {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #018CE8;
+font-size: 11px;
+font-weight: bold;
+}
+
+/* For an non active submenu */
+.subnav_on {
+color: #666666;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 11px;
+font-weight: normal;
+text-decoration: none;
+}
+
+/* For the subheading in the submenu toolbar */
+.subnav_title {
+background: #676E7D;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #ffffff;
+font-size: 10.8px;
+font-weight: normal
+}
+
+
+/* Class for note message display */
+.note {
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/*  TopTable Links Like MY INFO TAB LINKS */
+
+
+.Top_Table_Bg {
+background: #D6DEEF;
+
+}
+
+/* Class for any label to be bold */
+.boldness {
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+.MandatoryData{
+BACKGROUND-COLOR: #F5F5ED;
+COLOR: black;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+FONT-WEIGHT: bold
+}
+
+.OptionalData{
+BACKGROUND-COLOR: #F5F5ED;
+COLOR: black;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+FONT-WEIGHT: normal
+}
+
+/* Class for any label to be normal */
+.normal {
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* Class for any label to be bold & red */
+.boldness_red {
+color: maroon;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/* Class for any label to be normal & red */
+.normal_red {
+color: maroon;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* Class with default dark color of the application */
+.dark_color {
+background: #62628A;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 6pt;
+font-weight: normal
+}
+
+/* Class with default body color of the application */
+.light_color {
+background: #F5F5ED;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 6pt;
+font-weight: normal
+}
+
+/* Button Class for wizards */
+.main_butts {
+background: #DDDDDD;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/************* Edit Popup Title ****************/
+TABLE.popuptitle {
+background: #EFFCFF url(images/popup_title.gif);
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 11px;
+font-weight: bold
+}
+TR.popuptitle {
+background: #EFFCFF url(images/popup_title.gif);
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 11px;
+font-weight: bold
+}
+
+TD.popuptitle {
+background: #EFFCFF url(images/popup_title.gif);
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 11px;
+font-weight: bold
+}
+
+.popup_Bottom {
+background: #EFFCFF url(images/popup_bottom.gif);
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 11px;
+font-weight: bold
+}
+
+TABLE.white_bar {
+/* background: #FFFFFF; */
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+/* color: #000000; */
+font-size: 10.8px;
+font-weight: normal;
+}
+TR.white_bar {
+/* background: #FFFFFF; */
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+/* color: #000000; */
+font-size: 10.8px;
+font-weight: normal;
+}
+
+TD.white_bar {
+/* background: #FFFFFF; */
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+/* color: #000000; */
+font-size: 10.8px;
+font-weight: normal;
+}
+
+TABLE.gray_666666_bar {
+background: #666666;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 10.8px;
+font-weight: bold;
+}
+TR.gray_666666_bar {
+background: #666666;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+TD.gray_666666_bar {
+background: #666666;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+A.gray_666666_bar:link {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: white}
+A.gray_666666_bar:visited {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: white}
+A.gray_666666_bar:active {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: white;}
+A.gray_666666_bar:hover {text-decoration: none; font-size: 10.8px; font-weight: bold; color: red;}
+
+A.white_bar:link {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: black}
+A.white_bar:visited {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: black}
+A.white_bar:active {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: black;}
+A.white_bar:hover {text-decoration: none; font-size: 10.8px; font-weight: bold; color: red;}
+
+
+TABLE.login_top_bar {
+background: #CC0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 10.8px;
+font-weight: bold;
+text-align: center;
+}
+TR.login_top_bar {
+background: #CC0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 10.8px;
+font-weight: bold;
+text-align: center;
+}
+
+TD.login_top_bar {
+background: #CC0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+font-size: 10.8px;
+font-weight: bold;
+text-align: center;
+}
+
+TABLE.login_bottom_bar {
+background: #CCCCCC;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #000000;
+font-size: 10.8px;
+font-weight: bold;
+text-align: center;
+}
+TR.login_bottom_bar {
+background: #CCCCCC;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #000000;
+font-size: 10.8px;
+font-weight: bold;
+text-align: center;
+}
+
+TD.login_bottom_bar {
+background: #CCCCCC;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #000000;
+font-size: 10.8px;
+font-weight: bold;
+text-align: center;
+}
+
+/************* Report column Colors ****************/
+
+TABLE.reportcols {
+background: #CCCCCC;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #000000;
+font-size: 10.8px;
+font-weight: bold
+}
+TR.reportcols {
+background: #CCCCCC;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #000000;
+font-size: 10.8px;
+font-weight: bold
+}
+
+TD.reportcols {
+background: #CCCCCC;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #000000;
+font-size: 10.8px;
+font-weight: bold
+}
+
+
+/**/
+.main_td {
+background: #F5F5ED
+}
+
+/**/
+.main_tr {
+background: #F5F5ED;
+color: #000000;
+}
+
+/**/
+.main_body {
+background: #808080
+}
+
+/* For th search toolbar table */
+.main_title_table {
+background: #EFFCFF;
+color: #245E6C;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* For th search toolbar tr*/
+.main_title_tr {
+background: #EFFCFF;
+color: #245E6C;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* For th search toolbar td*/
+.main_title_td {
+background: #EFFCFF url(images/Search_bg.gif);
+color: #245E6C;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+
+/* For th title toolbar table */
+.sub_title_table {
+background: #ffffff;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/* For th title toolbar tr */
+.sub_title_tr {
+background: #ffffff;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/* For th title toolbar td */
+.sub_title_td {
+background: #ffffff;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/* For th subtitle toolbar table */
+.lower_title_table {
+background: #D6D6D6;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* For th subtitle toolbar tr */
+.lower_title_tr {
+background: #D6D6D6;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* For th subtitle toolbar td */
+.lower_title_td {
+background: #D6D6D6C;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* For th border table */
+.border_title_table {
+background: #ffffff;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/* For th border tr */
+.border_title_tr {
+background: #ffffff;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+/* For th border td */
+.border_title_td {
+background: #ffffff;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold
+}
+
+
+/* Kannan: For Third Level Links Body with Border  */
+
+.Body_Display_Border {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	font-style: normal;
+	color: #000033;
+    height:100%;
+    background-color: #FFFFFF;
+	border: 3px solid #cee0ff;
+}
+
+/* For th column headings table */
+.column_title_table {
+background: #D2DCF7;
+color: #000000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For Column Header with Lik display */
+
+.column_header {
+color: #FFFFFF;
+text-decoration: underline;
+font-weight: bold;
+}
+
+.column_header:hover {
+color: #FFFFFF;
+text-decoration: none;
+font-weight: bold;
+}
+
+/* For th column headings tr */
+.column_title_tr {
+background: #749fd6;
+color: #FFFFFF;
+line-height: 20px;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10px;
+font-weight: bold;
+}
+
+/* For th column headings td */
+.column_title_td {
+background: #749fd6;
+color: #FFFFFF;
+line-height: 20px;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10px;
+font-weight: bold;
+}
+/* For th column headings td Highlighled */
+.column_title_highLight_td {
+background: #9BB1EC;
+color: #ffffff;
+line-height: 20px;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For th paging table */
+.paging_table {
+color: #FF0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For th paging tr */
+.paging_tr {
+color: #FF0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For th paging td */
+.paging_td {
+color: #FF0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For th cookie trail table */
+.cookie_table {
+background: #FAEFDA;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For th cookie trail tr */
+.cookie_tr {
+background: #FAEFDA;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For th cookie trail td */
+.cookie_td {
+background: #FAEFDA;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* For th forward trail table */
+.forward_table {
+background: #FFDDDD;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For th forward trail tr */
+.forward_tr {
+background: #FFDDDD;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For th forward trail td */
+.forward_td {
+background: #FFDDDD;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For the view row color 2nd row */
+.row_yellow_tr {
+background: #EEF5FD;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+.row_yellow_td {
+background: #EEF5FD;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+display:table-cell;
+}
+
+/* Disabled - Row Style */
+.row_yellow_trDisabled{
+background: #EEF5FD;
+color: #A49A9A;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+
+/* For the view row color 1st row */
+.row_gray_tr {
+background: #FBFBFB;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+.row_gray_td {
+background: #FBFBFB;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+display:table-cell;
+}
+
+/* Disabled - Row Style */
+.row_gray_trDisabled {
+background: #E0E0E0;
+color: #A49A9A;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* For any no data available generic*/
+.nodata {
+background: url(images/NoData.gif);
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+/**/
+.unassign {
+background: #E9FAFE;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+/* For the any message success or not a success */
+.save_error {
+color: #FF0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* Should not be used */
+.save_success {
+color: #FF0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* Kannan: Temporary Error Message Usage in Template  Widget Threshold Builder */
+.save_success_caption {
+color: #0033CC;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* Classes below are for Calendar */
+/* Default calendar color */
+.calendar {
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+/* Class for Sunday label */
+.sunday_color {
+background: #663300;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+padding: 0px,0px,0px,0px;
+}
+
+/* Class for Sunday date label */
+.sunday_date_color {
+background: #FF9999;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+padding: 0px,0px,0px,0px;
+}
+
+/* Class for Saturday label */
+.saturday_color {
+background: #5959AC;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+padding: 0px,0px,0px,0px;
+}
+
+/* Class for Saturday date label */
+.saturday_date_color {
+background: #B0B0D7;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+padding: 0px,0px,0px,0px;
+}
+
+
+/* Class for WeekDay label */
+.day_color {
+background: #5959AC;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+padding: 0px,0px,0px,0px
+}
+
+/* Class for WeekDay date label */
+.weekdays_date_color {
+background: #B0B0D7;
+color: green;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+padding: 0px,0px,0px,0px
+}
+
+/* Class for Current date label */
+.current_date_color {
+background: #999999;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+padding: 0px,0px,0px,0px
+}
+
+/* Class Date label anchor properties*/
+a.Date {
+text-decoration: none;
+font-size: 10.8px;
+font-weight: normal;
+color: blue;
+font-family: Arial, Helvetica, sans-serif
+}
+
+a.Date:hover {
+text-decoration: none;
+font-size: 10.8px;
+font-weight: bold;
+color: #FFFFFF;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+background-color: #666666
+}
+
+.default {
+color: #FF0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+
+/* Related to HelpDesk Calendar */
+
+TR.CalDate
+{
+COLOR: #000000;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+TD.CalDate
+{
+COLOR: #000000;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+A.CalDate:link {text-decoration: none; font-size: 10.8px; font-weight: normal; color: #000066; font-family: verdana, Geneva, Arial, Helvetica, sans-serif}
+A.CalDate:visited {text-decoration: none; font-size: 10.8px; font-weight: normal; color: #000066; font-family: verdana, Geneva, Arial, Helvetica, sans-serif}
+A.CalDate:active {text-decoration: none; font-size: 10.8px; font-weight: bold; color: #FFFFFF; font-family: verdana, Geneva, Arial, Helvetica, sans-serif; background-color:#666666;}
+A.CalDate:hover {text-decoration: none; font-size: 10.8px; font-weight: bold; color: #FFFFFF; font-family: verdana, Geneva, Arial, Helvetica, sans-serif; background-color:#666666;}
+
+TR.CalLabel
+{
+COLOR: #000000;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+TD.CalLabel
+{
+COLOR: #000000;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+TR.CalWeekEnd
+{
+background: #FFEEEE;
+color: #FFFFFF;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+TD.CalWeekEnd
+{
+background: #FFEEEE;
+color: #FFFFFF;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+TR.CalWeekEndHead
+{
+background: #660000;
+color: #FFFFFF;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+TH.CalWeekEndHead
+{
+background: #660000;
+color: #FFFFFF;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+TR.CalWeekDays
+{
+background: #EEEEFF;
+color: #FFFFFF;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+TD.CalWeekDays
+{
+background: #EEEEFF;
+color: #FFFFFF;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+TR.CalSelectedDate
+{
+background: #9999CC;
+color: #000033;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+TD.CalSelectedDate
+{
+background: #9999CC;
+color: #000033;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+TR.CalSelectedWeekEnd
+{
+background: #FFA6A6;
+color: #000033;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+TD.CalSelectedWeekEnd
+{
+background: #FFA6A6;
+color: #000033;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+TR.CalWeekDaysHead
+{
+background: #666699;
+color: #FFFFFF;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+TH.CalWeekDaysHead
+{
+background: #666699;
+color: #FFFFFF;
+FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+TABLE.CalendarHead {
+background: #666666;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+TR.CalendarHead {
+background: #808080;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+TH.CalendarHead {
+background: #808080;
+color: white;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+A.CalendarHead:link {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: white}
+A.CalendarHead:visited {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: white}
+A.CalendarHead:active {text-decoration: underline; font-size: 10.8px; font-weight: bold; color: white;background-color:#808080}
+A.CalendarHead:hover {text-decoration: none; font-size: 10.8px; font-weight: bold; color: yellow;background-color:#808080}
+
+
+A.main_title_table:link {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: white; font-family: verdana, Geneva, Arial, Helvetica, sans-serif;}
+A.main_title_table:visited {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: white; font-family: verdana, Geneva, Arial, Helvetica, sans-serif;}
+A.main_title_table:active {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: white; font-family: verdana, Geneva, Arial, Helvetica, sans-serif;}
+A.main_title_table:hover {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: yellow; font-family: verdana, Geneva, Arial, Helvetica, sans-serif;}
+
+
+TABLE.title_666666 {
+background: #666666;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: white;
+font-size: 10.8px;
+font-weight: bold
+}
+TR.title_666666 {
+background: #666666;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: white;
+font-size: 10.8px;
+font-weight: bold
+}
+
+TD.title_666666 {
+background: #666666;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+color: white;
+font-size: 10.8px;
+font-weight: bold
+}
+
+
+TABLE.CalendarRow {
+background: #CCCCCC;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+TR.CalendarRow {
+background: #CCCCCC;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+TD.CalendarRow {
+background: #CCCCCC;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+TABLE.Lower_Title {
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+TR.Lower_Title {
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+TD.Lower_Title {
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+
+TABLE.Row_1 {
+background: #999999;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+TR.Row_1 {
+background: #999999;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+TD.Row_1 {
+background: #999999;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+
+TABLE.Row_2 {
+background: #CCCCCC;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+TR.Row_2 {
+background: #CCCCCC;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+TD.Row_2 {
+background: #CCCCCC;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal
+}
+
+/* Added for Vytek User, Group Screens. */
+
+.Title1, TR.Title1, TD.Title1 {
+BACKGROUND-COLOR: #ffffff;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+COLOR: #000000;
+font-weight: bold;
+}
+
+.Title2, TR.Title2, TD.Title2 {
+BACKGROUND-COLOR: #ffffff;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+COLOR: #000000;
+}
+
+.LeftMenuSel, TR.LeftMenuSel, TD.LeftMenuSel {
+BACKGROUND-COLOR: #FFFFFF;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+FONT-SIZE: 9pt;
+LINE-HEIGHT: 15px;
+COLOR: #384D76;
+font-weight: bold;
+}
+
+.LeftMenu, TR.LeftMenu, TD.LeftMenu {
+BACKGROUND-COLOR: #ffffff;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+COLOR: #000000;
+}
+
+.LeftSubMenuSel, TR.LeftSubMenuSel, TD.LeftSubMenuSel {
+BACKGROUND-COLOR: #FFFFFF;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+COLOR: #556A92;
+font-weight: bold;
+}
+
+.LeftSubMenu, TR.LeftSubMenu, TD.LeftSubMenu {
+BACKGROUND-COLOR: #FFFFFF;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+LINE-HEIGHT: 15px;
+COLOR: #000000;
+
+}
+
+.Mandatory, TR.Mandatory, TD.Mandatory {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+FONT-WEIGHT: bold;
+font-size: 10.8px;
+}
+
+.Optional, TR.Optional, TD.Optional {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+}
+
+.TopMenu, TR.TopMenu, TD.TopMenu {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+COLOR: #3E679F;
+text-decoration: none;
+font-weight: normal;
+}
+
+.TopMenuSel, TR.TopMenuSel, TD.TopMenuSel {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+BACKGROUND-COLOR: #ffffff;
+COLOR: #3E679F;
+font-weight: normal;
+}
+.GroupMembersBorder, TR.GroupMembersBorder, TD.GroupMembersBorder {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+BACKGROUND-COLOR: #999999;
+COLOR: #333333;
+}
+
+.GroupMembersCD, TR.GroupMembersCD, TD.GroupMembersCD {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+BACKGROUND-COLOR: #E0E0E0;
+COLOR: #000000
+}
+
+A.GroupMembersCD:link {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #0000FF}
+A.GroupMembersCD:visited {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #990099}
+A.GroupMembersCD:active {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #CC0000}
+A.GroupMembersCD:hover {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #CC0000}
+
+
+.GroupMembersSubGroup, TR.GroupMembersSubGroup, TD.GroupMembersSubGroup {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+BACKGROUND-COLOR: #CCCCFF;
+COLOR: #000000
+}
+
+A.GroupMembersSubGroup:link {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #0000FF}
+A.GroupMembersSubGroup:visited {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #990099}
+A.GroupMembersSubGroup:active {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #CC0000}
+A.GroupMembersSubGroup:hover {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #CC0000}
+
+.GroupMembersHeaderDel, TR.GroupMembersHeaderDel, TD.GroupMembersHeaderDel {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+BACKGROUND-COLOR: #CCCCCC;
+COLOR: #333333
+}
+
+.GroupMembersHeader, TR.GroupMembersHeader, TD.GroupMembersHeader {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+FONT-WEIGHT: bold;
+BACKGROUND-COLOR: #CCCCCC;
+COLOR: #333333
+}
+
+.GroupMembers, TR.GroupMembers, TD.GroupMembers {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+BACKGROUND-COLOR: #FFFFFF;
+COLOR: #000000
+}
+
+A.GroupMembers:link {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #0000FF}
+A.GroupMembers:visited {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #990099}
+A.GroupMembers:active {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #CC0000}
+A.GroupMembers:hover {text-decoration: underline; font-size: 10.8px; font-weight: normal; color: #CC0000}
+
+.Error, TR.Error, TD.Error {
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+COLOR: #CC0000
+}
+
+/* For Send Message Response */
+.send_mess_border_res {
+padding: 7px;
+border: 7px solid #666666;
+}
+
+
+/* NEW UI - Venkat & Kannan */
+
+BODY_BG {
+background: #F4EDF5
+
+}
+
+.login_Inner_Table {
+
+BACKGROUND-COLOR: #EFEFEF;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 8pt
+COLOR: #000000;
+}
+
+.login_Inner_Td {
+
+BACKGROUND-COLOR: #EFEFEF;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 7pt
+COLOR: #ff0000;
+font-weight: none
+}
+
+.login_Inner_Tr {
+
+BACKGROUND-COLOR: #EFEFEF;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 7pt
+COLOR: #000000;
+}
+
+
+.Login_Inner_Font {
+
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 20pt
+COLOR: #ff0000;
+}
+
+
+.Drop_Boxes {
+
+BACKGROUND-COLOR: #ffffff;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 7pt
+COLOR: #ff0000;
+font-weight: none;
+border: 1px solid #999999;
+}
+
+.HomePage_MenuTitle {
+
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 7pt
+COLOR: #000033;
+font-weight: bold
+}
+
+
+.LeftMainMenu_Image_Cursor {
+	cursor: hand;
+}
+
+
+.GrpMem_Table {
+BACKGROUND-COLOR: #E7E8EF;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+FONT-WEIGHT: normal;
+COLOR: #000000;
+}
+
+
+.GrpMem_Tr {
+background: #666666;
+color: #ffffff;
+line-height: 20px;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: bold;
+}
+
+.GrpMem_Td {
+background: #E0E0E0;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+.Buildview_inner {
+background: #EFEFEF;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+.LDAP_bottom {
+background: #EFEFEF;
+color: #FF0000;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+.HelpTop {
+	background: #264468;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.Help_Head_Title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: bold;
+}
+.HelpText {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+}
+
+.Subscription_searchPanel {
+font-size: 10.8px;
+border-bottom: 1px solid #aea8b0;
+}
+
+.Subscription_Bg {
+background: #F4EDF5;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+.Subscription_List_td_bg {
+background: #F4EDF5;
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+.Subscription_inner {
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+.Subscription_Text{
+color: black;
+font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10.8px;
+font-weight: normal;
+}
+
+
+/* Kannan - Force Change Password UI */
+
+.password_top_table {
+color: #ffffff;
+background: #6BA2DE;
+font-size: 13px;
+font-weight: bold;
+text-align: center;
+}
+
+.password_bottom_table {
+color: #ffffff;
+background: #D6DFEF;
+font-size: 13px;
+font-weight: bold;
+text-align: center;
+}
+
+.TextBox_Disabled {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+		font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #E8E8E8;
+	border: 1px solid #666666;
+	line-height: normal;
+	height: 20px;
+}
+.TextBox_Enabled {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	border: 1px solid #666666;
+	line-height: normal;
+	height: 20px;
+}
+
+.TextArea_Disabled {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #E8E8E8;
+	border: 1px solid #666666;
+}
+
+
+.Dashboard_General_Bg {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	background-image: url(Align_grid.gif);
+
+}
+.Dashboard_View_Bg {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	background-image: url(grid.gif);
+
+}
+.topNAV {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666;
+}
+.topNAVsel {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666;
+	font-weight: bold;
+
+}
+.topNAVms {
+	font-size: 12px;
+	color: #005984;
+	font-family: "Trebuchet MS";
+
+}
+.topNAVselCopy {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #B0B0B0;
+	font-weight: bold;
+	text-decoration: none;
+
+}
+.propertySTYLE {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #006699;
+}
+.StyleBOX {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #006699;
+	border: 1px solid #DDDDDD;
+
+}
+.topNAVselected {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #585858;
+	font-weight: bold;
+	text-decoration: none;
+}
+.StyleNobox {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #006699;
+	border: none;
+	cursor: default;
+
+}
+.topNAVnoUnderLine {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #666666;
+	text-decoration: none;
+
+}
+.LinkStyler {
+	cursor: hand;
+}
+.LayerDRAG {
+	cursor: hand;
+}
+.BordTXTbox {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	border: 1px solid #CCCCCC;
+    }
+
+.Widget_Advanced_property_BG
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    background: #F7F7F7;
+    font-size: 11px;
+	color: #333333;
+}
+
+.Widget_Name
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    background: #F1F1F1;
+    font-size: 11px;
+	color: #000000;
+    text-align:center;
+}
+
+
+/**** Dashboard Color Selector **************/
+
+.clr_tab_onn
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+    color: #FFFFFF;
+    text-decoration:none;
+}
+.clr_tab_off
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #000000;
+    text-decoration:none;
+}
+/**** Kannan: For New UI **************/
+
+.first_inact_bg{
+	background-image: url(images/tabs/first-inact-bg.png);
+	background-repeat: no-repeat;
+	background-repeat-x: no-repeat; 
+}
+.first_act_bg{
+	background-image: url(images/tabs/first-act-bg.png);
+	background-repeat: no-repeat;
+	background-repeat-x: no-repeat; 
+}
+
+.top_navigation_Logo_Pane{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #000000;
+	text-decoration:none;
+	background-image: url(images/topNav.gif);
+	background-repeat: no-repeat;
+	background-repeat-x: no-repeat; 
+}
+
+.top_navigation_pane{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #000000;
+	text-decoration:none;
+	background-image: url(images/top_bg.gif);
+}
+
+.top_Tiny_Logo_Pane{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #000000;
+	text-decoration:none;
+	background-image: url(images/top_tiny_nav.gif);
+	background-repeat-x: no-repeat;
+}
+
+.top_Tiny_pane{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #000000;
+	text-decoration:none;
+	background-image: url(images/top_tiny_bg.gif);
+}
+
+.Main_menu_selected{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #000000;
+	text-decoration:none;
+	background-image: url(images/sel2.gif);
+}
+
+.Main_menu{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #49B33E;
+	text-decoration:none;
+	background-image: url(images/bn.gif);
+}
+
+.Main_menu_listing{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #333333;
+	text-decoration:none;
+}
+
+.Main_menu_listing_selected{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #5682C2;
+	text-decoration:none;
+}
+
+.personalise {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	color: #990000;
+	background-color: #FFFFFF;
+}
+.ThemeHeader {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	font-style: normal;
+	color: #999900;
+	background-color: #ECECD9;
+}
+.PreviewHeader {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	font-style: normal;
+	color:#f8f808;
+	background-color:#a5a57a;
+	border-radius:5px 5px 0px 0px;
+}
+.PreviewDisplay {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	font-style: normal;
+	color: #999900;
+	background-color: #FDFDFB;
+}
+
+.login_Panel_display {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	font-weight: normal;
+	color: #000000;
+	background-image: url(images/topNav_Pane.gif);
+	box-shadow: 3px 3px 10px 0 rgba(0,0,0,.3);
+    border-radius: 5px;
+}
+
+
+/*Saradha: Help Ui content*/
+.helpBg {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #f8fbfc;
+    font-size: 10px;
+    color: #333333;
+    background-image: url(images/help/bg.gif );
+    background-repeat: no-repeat;
+}
+
+.help_Content {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #333366;
+    text-align: justify;
+}
+.helpTitle {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003366;
+}
+
+.help_top_Panel {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003399;
+    text-decoration: none;
+}
+
+.help_top_Panel:hover {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003366;
+    text-decoration: none;
+}
+
+.helpDisplayBorder {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003366;
+    border: 1px solid #c8daec;
+    background-color: #FFFFFF;
+}
+
+.highLight {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003399;
+    line-height: 20px;
+    background-color: #FFF7D5;
+    background-image: url(images/help/sel_first.gif );
+}
+
+.highLight_Child {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003399;
+    line-height: 20px;
+    background-color: #FFFBE8;
+    background-image: url(images/help/sel_second.gif );
+}
+
+.highLight_second_Child {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003399;
+    line-height: 20px;
+    background-color: #FFFBE8;
+    text-decoration:none;
+    background-image: url(images/help/sel_third.gif );
+}
+
+.general_Child {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003399;
+    line-height: 20px;
+    background-color: #FFFFFF;
+}
+
+.general {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #003399;
+    line-height: 20px;
+    text-decoration:none;
+}
+
+.Blue {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #006699;
+	background-color: #E6FAFF;
+	font-size: 10px;
+	text-decoration: none;
+
+}
+.Sepia {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #996600;
+	background-color: #FFF8F0;
+	font-size: 10px;
+}
+.Pink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF3366;
+	background-color: #FFF4F4;
+	font-size: 10px;
+}
+.Green {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #00CC33;
+	background-color: #F8FFF2;
+	font-size: 10px;
+}
+.SeaBlue {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #0033CC;
+	background-color: #EAEFFF;
+	font-size: 10px;
+}
+.colorSelector {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	color: #333333;
+	background-color: #EBEBC2;
+	border: 1px solid #E4E4B1;
+}
+
+.LogReader_help_title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	color: #333333;
+	background-image: url(../../images/audit_title_small.gif);
+}
+
+/*** Kannan for Calendar UI ***/
+.cal_style_top{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	color: #ffffff;
+	background-image: url(images/cal_tile_back.gif);
+	border-radius: 7px 7px 0px 0px;
+}
+
+.weekHeader {
+	background-color: #C2D1E4;
+	color:#3A4F6C;
+	font-weight:bold;
+	padding:7px;
+	margin-top:1px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-align: center;
+}
+
+.cal_calendar {
+    font-size: 10pt;
+    font-family: verdana;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.link_Nav_white {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link_Nav_white:hover {
+    text-align: center;
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.link_Nav {
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+}
+
+.link_Nav:hover {
+    color: #0000ff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.cal_header {
+    background-color: #DDF7F9;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.cal_Nav {
+    background-color: #FFFFFF;
+    color: #00ff00;
+    padding: 2px;
+    margin: 1px;
+    border: none;
+    text-align: center;
+    width: 8ex;
+    height: 3ex;
+}
+
+.cal_cell {
+    background-color: #B0B0D7;
+    color: #ffffff;
+    padding: 2px;
+    margin: 1px;
+    border: none;
+    text-align: center;
+    width: 8ex;
+    height: 3ex;
+}
+
+.cal_daycell {
+    padding: 2px;
+    margin: 1px;
+    border: none;
+    text-align: center;
+    width: 8ex;
+    height: 3ex;
+}
+
+.cal_labelcell {
+    padding: 2px;
+    margin: 1px;
+    border: none;
+    text-align: center;
+}
+
+.cal_oddweek {
+    height: 4ex;
+    background-color: #55D2DD;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.cal_evenweek {
+    background-color: #D1FAFC;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.cal_day {
+    width: 3ex;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+    cursor: hand;
+}
+
+.cal_today {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    width: 3ex;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.cal_disabled {
+    color: yellow;
+    width: 3ex;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.cal_common {
+    text-align: center;
+    color: black;
+    width: 3ex;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.cal_holiday {
+    text-align: center;
+    color: black;
+    width: 3ex;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.cal_selected_day {
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #6273A2;
+    border: 1px solid #CCCCCC;
+    width: 3ex;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.cal_event {
+    background-color: yellow;
+    color: red;
+    width: 3ex;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.week_row1   { text-align:right;font-weight:bold;font-size:11px;color:#796b4b;background-color:#DFE6EF;padding:4px;margin:0px }
+.week_row2   { text-align:right;font-weight:bold;font-size:11px;color:#796b4b;background-color:#C2CFDF;padding:4px;margin:0px }
+
+.display_date   { text-align:right;font-weight:bold;font-size:11px;color:#777;background-color:#DFE6EF;padding:4px;margin:0px }
+.innertr_yellow1 {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #fef9e9
+}
+.innertr_yellow2 {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #e9e8ff
+}
+.innertr_gray1 {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f1f0ff
+}
+.innertr_gray2 {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #fef7f7
+}
+
+.enable_dateBox { background-color: #EEF2F7 }
+.disable_dateBox { background-color: #C2CFDF; color:#4C77B6; }
+.disable_dateBox_selected {
+	background-color: #EEF2F7;
+	color:#4C77B6;
+	border: 2px solid #FFFFFF;
+}
+.topDisplay {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.msg_error {
+	color: #FF0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	font-weight: normal;
+}
+.msg_success {
+	color: #0000ff;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10.8px;
+	font-weight: normal;
+}

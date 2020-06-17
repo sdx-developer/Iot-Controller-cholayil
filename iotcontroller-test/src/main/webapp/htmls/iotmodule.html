@@ -1,0 +1,102 @@
+<div class="row" style="min-height:525px!important">
+<style>
+div.b {
+  position: absolute;
+  top:80px;
+  left:750;
+  width: 260px;
+  height: 220px;
+  border: 2px solid grey;
+  background-color:white;
+  
+} 
+
+.button {
+  display: inline-block;
+  padding:12px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+   margin: auto;
+  background-color: #3d3d5c;
+  border: none;
+  border-radius: 5 px;
+  box-shadow: 0 9px #999;
+  
+}
+
+.button:hover {background-color:#7575a3}
+
+.button:active {
+  background-color: #7575a3;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+
+	<script>
+	var modName = "FETCH_MOD_NAME"
+	jui.ready([ "ui.property" ], function(PropertyView) {
+		var response = $.ajax({ type: "GET",   
+			url: "/rk/sdx/cds/modules/displayModule/"+modName,   
+			async: false, dataType : "text"
+		}).responseText;
+
+		window.prSettings = new PropertyView('#pr-settings', JSON.parse(response));
+		window.prSettings.on("change", function(item, newValue, oldValue){
+		});
+	});
+	</script>
+	<div class="col-10 col-lg-8 col-xxl-10 d-flex" style="flex-direction:column;">
+	
+	
+		<div class="card flex-fill jui jennifer">
+			<div class="card-header">
+				<div class="card-actions float-right">
+					<a href="#" class="mr-1">
+						<!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw align-middle">
+							<polyline points="23 4 23 10 17 10"></polyline>
+							<polyline points="1 20 1 14 7 14"></polyline>
+							<path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+						</svg> -->
+					</a>
+				</div>
+				<h5 class="card-title mb-0">IoT Module - <span id="IotCurrentModName">FETCH_MOD_NAME</span></h5>
+			</div>
+			<div id="pr-settings" class="property"></div>
+		</div>
+		<div class="mb-3">
+		<script>
+        function myFunction() {
+        alert("Values Updated");
+        }
+        </script>
+			<button id="iotMod-update-properties" class="btn btn-primary btn-sm" onclick="myFunction()">Update Module</button>&nbsp;
+			<!-- <button id="iotMod-execution-start"   class="btn btn-primary btn-sm">Update & Start Module</button> -->
+		</div>
+		
+		<div class="b">
+		<div class="card flex-fill jui jennifer">
+			<div class="card-header">
+				<div class="card-actions float-right">
+					<a href="#" class="mr-1">
+						<!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw align-middle">
+							<polyline points="23 4 23 10 17 10"></polyline>
+							<polyline points="1 20 1 14 7 14"></polyline>
+							<path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+						</svg> -->
+					</a>
+				</div>
+				<h5 class="card-title mb-0">IoT Module - <span id="IotCurrentModName">FETCH_MOD_NAME</span></h5>
+			</div>	
+		</div>
+		<div>
+         <p style="text-align:center"> <button id="modules-start" class="button">Start Module</button></p>
+			<p style="text-align:center"><button id="modules-stop"  class="button"> Stop Module</button></p>
+		</div> 
+	</div>
+</div>

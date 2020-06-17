@@ -1,0 +1,1231 @@
+/***************************************************************************************/
+/* 	             This css basically implemented for FISWMS 		  */
+/* Main Menu - This comprises of the User Management, Schedule Management */
+/* Sub  Menu - This comprises of the User, Group, Department, Destination         */
+/****************************************************************************************/
+
+
+/* Default body background color */
+
+BODY {
+	background: #FFFFFF;
+    margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em 
+}
+
+.portalleft {
+	background: #FF9933;
+    margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em 
+}
+
+.portalbackground {
+	background: #FFE6CC;
+    margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em 
+}
+
+
+/* Default font face & size of the table td & th */
+TD, TH{
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt
+}
+
+/* Default anchor properties */
+a {
+text-decoration: underline; 
+color: blue
+}
+a:hover {
+color: red; 
+text-decoration: none
+}
+
+/* Default Form Element Type = 'text' properties */
+INPUT {
+	background: #DED6D2;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bolder
+}
+
+/* Default Form Element Type = 'textarea' properties */
+TEXTAREA {
+	background: #DED6D2;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bolder
+}
+
+/* Default Form Element Type = 'select' properties */
+SELECT {
+	background: #DED6D2;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bolder
+}
+
+/* For submenu pipe seperator [|] in between all the menu items */
+.pipe {
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #321A37;
+	font-size: 10px;
+	font-weight: normal
+}
+
+/* In FISWMS edit screens all the edit labels rows & columns are implemented with this class */
+.bodycolor {
+	background: #F5F5ED
+}
+
+
+
+/**/
+.input_request {
+	font-weight: bold
+}
+
+
+/************** Gray color #666666 button ***************/
+
+.butts_666666 {
+	background: #666666;
+	color: white;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+
+
+
+/* Button class on the view screens */
+.purple_butts {
+	background: #FF9933;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+
+/* Used for the Login screen bars */
+.purple_bar {
+	background: #62628A;
+	color: white;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center
+}
+
+/* Used for the Login screen info in the bars */
+.purple_info {
+	background: #62628A;
+	color: white;
+	font-size: 10px;
+	font-weight: bold
+}
+
+
+/* Error message display in login page */
+.login_error {
+	color: red; 
+	font-size: 8pt; 
+	font-family: Verdana, Geneva, Helvetica, sans-serif; 
+	font-weight: bold
+}
+
+/* Classes for Mainmenu labels */
+
+/* For the non active main menu */
+.non_active_toolbar {
+	background: #C3BCBE;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For the active main menu */
+.active_toolbar {
+	background: #FFFFD3;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* Classes for Submenu labels */
+
+/* For an active submenu */
+.subnav {
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #321A37;
+	font-size: 11px;
+	font-weight: bold
+}
+
+/* For an non active submenu */
+.subnav_on {
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #321A37;
+	font-size: 11px;
+	font-weight: normal
+}
+
+/* For the subheading  in the submenu toolbar */
+.subnav_title {
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #62628A;
+	font-size: 11px;
+	font-weight: bold
+}
+
+
+/* Class for note message display */
+.note {
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* Class for any label to be bold */
+.boldness {
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+.MandatoryData{
+    BACKGROUND-COLOR: #F5F5ED;
+    COLOR: black;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold
+}
+
+.OptionalData{
+    BACKGROUND-COLOR: #F5F5ED;
+    COLOR: black;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal
+}
+
+/* Class for any label to be normal */
+.normal {
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* Class for any label to be bold & red */
+.boldness_red {
+	color: maroon;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* Class for any label to be normal & red */
+.normal_red {
+	color: maroon;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* Class with default dark color of the application */
+.dark_color {
+	background: #62628A;
+	color: white;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 6pt;
+	font-weight: normal
+}
+
+/* Class with default body color of the application */
+.light_color {
+	background: #F5F5ED;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 6pt;
+	font-weight: normal
+}
+
+/* Button Class for wizards */
+.main_butts {
+	background: #DDDDDD;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+    font-color: black;
+	font-weight: bold
+}
+
+/************* Edit Popup Title ****************/
+TABLE.popuptitle {
+	background: #FF9933;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold
+}
+TR.popuptitle {
+	background: #FF9933;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: bold
+}
+
+TD.popuptitle {
+	background: #FF9933;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: bold
+}
+
+TABLE.white_bar {
+	background: #FFFFFF;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 8pt;
+	font-weight: bold;
+}
+TR.white_bar {
+	background: #FFFFFF;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+TD.white_bar {
+	background: #FFFFFF;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+TABLE.gray_666666_bar {
+	background: #666666;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 8pt;
+	font-weight: bold;
+}
+TR.gray_666666_bar {
+	background: #FFE6CC;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+TD.gray_666666_bar {
+	background: #666666;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+A.gray_666666_bar:link    {text-decoration: underline; FONT-SIZE: 8pt; font-weight: bold; color: white}
+A.gray_666666_bar:visited {text-decoration: underline; FONT-SIZE: 8pt; font-weight: bold; color: white}
+A.gray_666666_bar:active  {text-decoration: underline; FONT-SIZE: 8pt; font-weight: bold; color: white;}
+A.gray_666666_bar:hover   {text-decoration: none; FONT-SIZE: 8pt; font-weight: bold; color: red;}
+
+A.white_bar:link    {text-decoration: underline; FONT-SIZE: 8pt; font-weight: bold; color: black}
+A.white_bar:visited {text-decoration: underline; FONT-SIZE: 8pt; font-weight: bold; color: black}
+A.white_bar:active  {text-decoration: underline; FONT-SIZE: 8pt; font-weight: bold; color: black;}
+A.white_bar:hover   {text-decoration: none; FONT-SIZE: 8pt; font-weight: bold; color: red;}
+
+
+TABLE.login_top_bar {
+	background: #CC0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+TR.login_top_bar {
+	background: #CC0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+TD.login_top_bar {
+	background: #CC0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+TABLE.login_bottom_bar {
+	background: #CCCCCC;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+TR.login_bottom_bar {
+	background: #CCCCCC;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+TD.login_bottom_bar {
+	background: #CCCCCC;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/************* Report column Colors ****************/
+
+TABLE.reportcols {
+	background: #CCCCCC;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: bold
+}
+TR.reportcols {
+	background: #CCCCCC;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: bold
+}
+
+TD.reportcols {
+	background: #CCCCCC;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 10px;
+	font-weight: bold
+}
+
+
+/**/
+.main_td {
+	background: #F5F5ED
+}
+
+/**/
+.main_tr {
+	background: #F5F5ED
+}
+
+/**/
+.main_body {
+	background: #808080
+}
+
+/* For th search toolbar table */
+.main_title_table {
+	background: #808080;
+	color: white;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th search toolbar tr*/
+.main_title_tr {
+	background: #808080;
+	color: white;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th search toolbar td*/
+.main_title_td {
+	background: #808080;
+	color: white;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+
+/* For th title toolbar table */
+.sub_title_table {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th title toolbar tr */
+.sub_title_tr {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th title toolbar td */
+.sub_title_td {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th subtitle toolbar table */
+.lower_title_table {
+	background: #D6D6D6;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th subtitle toolbar tr */
+.lower_title_tr {
+	background: #D6D6D6;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th subtitle toolbar td */
+.lower_title_td {
+	background: #D6D6D6C;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th border table */
+.border_title_table {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th border tr */
+.border_title_tr {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th border td */
+.border_title_td {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th column headings table */
+.column_title_table {
+	background: #FF9933;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th column headings tr */
+.column_title_tr {
+	background: #FF9933;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th column headings td */
+.column_title_td {
+	background: #FF9933;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For th paging table */
+.paging_table {
+	color: #FF0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th paging tr */
+.paging_tr {
+	color: #FF0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th paging td */
+.paging_td {
+	color: #FF0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th cookie trail table */
+.cookie_table {
+	background: #FAEFDA;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th cookie trail tr */
+.cookie_tr {
+	background: #FAEFDA;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th cookie trail td */
+.cookie_td {
+	background: #FAEFDA;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th forward trail table */
+.forward_table {
+	background: #FFDDDD;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th forward trail tr */
+.forward_tr {
+	background: #FFDDDD;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For th forward trail td */
+.forward_td {
+	background: #FFDDDD;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For the view row color 2nd row */
+.row_yellow_tr {
+	background: #FFBA75;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For the view row color 1st row */
+.row_gray_tr {
+	background: #FFD7AE;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* For any no data available generic*/
+.nodata {
+	background: #FFFFFF;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/**/
+.unassign {
+	background: #E9FAFE;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold
+}
+
+/* For the any message success or not a success */
+.save_error {
+	color: #FF0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* Should not be used */
+.save_success {
+	color: #FF0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* Classes below are for Calendar */
+
+/* Default calendar color */
+.calendar {
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* Class for Sunday label */
+.sunday_color {
+        background: #663300;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+        padding: 0px,0px,0px,0px
+}
+
+/* Class for Sunday date label */
+.sunday_date_color {
+        background: #FF9999;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+        padding: 0px,0px,0px,0px
+}
+
+/* Class for Saturday label */
+.saturday_color {
+        background: #5959AC;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+        padding: 0px,0px,0px,0px
+}
+
+/* Class for Saturday date label */
+.saturday_date_color {
+        background: #B0B0D7;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+        padding: 0px,0px,0px,0px
+}
+
+
+/* Class for WeekDay label */
+.day_color {
+        background: #5959AC;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+        padding: 0px,0px,0px,0px
+}
+
+/* Class for WeekDay date label */
+.weekdays_date_color {
+        background: #B0B0D7;
+	color: green;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+        padding: 0px,0px,0px,0px
+}
+
+/* Class for Current date label */
+.current_date_color {
+        background: #999999;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+        padding: 0px,0px,0px,0px
+}
+
+/* Class Date label anchor properties*/
+a.Date {
+    text-decoration: none; 
+    FONT-SIZE: 8pt; 
+    font-weight: normal; 
+    color: blue;	
+    font-family: Arial, Helvetica, sans-serif 
+}
+
+a.Date:hover {
+    text-decoration: none; 
+    FONT-SIZE: 8pt; 
+    font-weight: bold; 
+    color: #FFFFFF;	
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: #666666
+}
+
+.default {
+	color: #FF0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+
+/* Related to HelpDesk Calendar */
+
+TR.CalDate
+{
+    COLOR: #000000;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+TD.CalDate
+{
+    COLOR: #000000;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+A.CalDate:link {text-decoration: none; FONT-SIZE: 8pt; font-weight: normal; color: #000066; font-family: verdana, Geneva, Arial, Helvetica, sans-serif}
+A.CalDate:visited {text-decoration: none; FONT-SIZE: 8pt; font-weight: normal; color: #000066; font-family: verdana, Geneva, Arial, Helvetica, sans-serif}
+A.CalDate:active {text-decoration: none; FONT-SIZE: 8pt; font-weight: bold; color: #FFFFFF;	font-family: verdana, Geneva, Arial, Helvetica, sans-serif; background-color:#666666;}
+A.CalDate:hover {text-decoration: none; FONT-SIZE: 8pt; font-weight: bold; color: #FFFFFF;	font-family: verdana, Geneva, Arial, Helvetica, sans-serif; background-color:#666666;}
+
+TR.CalLabel
+{
+    COLOR: #000000;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    font-weight: normal;
+}
+TD.CalLabel
+{
+    COLOR: #000000;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    font-weight: normal;
+}
+
+TR.CalWeekEnd
+{
+    background: #FFEEEE;
+    color: #FFFFFF;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+TD.CalWeekEnd
+{
+    background: #FFEEEE;
+    color: #FFFFFF;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+
+TR.CalWeekEndHead
+{
+    background: #660000;
+    color: #FFFFFF;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+TH.CalWeekEndHead
+{
+    background: #660000;
+    color: #FFFFFF;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+
+TR.CalWeekDays
+{
+    background: #EEEEFF;
+    color: #FFFFFF;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+TD.CalWeekDays
+{
+    background: #EEEEFF;
+    color: #FFFFFF;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+
+TR.CalSelectedDate
+{
+    background: #9999CC;
+    color: #000033;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    font-weight: bold;    
+}
+TD.CalSelectedDate 
+{
+    background: #9999CC;
+    color: #000033;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    font-weight: bold;
+}
+
+TR.CalSelectedWeekEnd
+{
+    background: #FFA6A6;
+    color: #000033;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    font-weight: bold;    
+}
+TD.CalSelectedWeekEnd 
+{
+    background: #FFA6A6;
+    color: #000033;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    font-weight: bold;
+}
+
+TR.CalWeekDaysHead 
+{
+    background: #666699;
+    color: #FFFFFF;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+TH.CalWeekDaysHead
+{
+    background: #666699;
+    color: #FFFFFF;
+    FONT-FAMILY: verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+
+TABLE.CalendarHead {
+	background: #666666;
+	color: white;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+TR.CalendarHead {
+	background: #808080;
+	color: white;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+TH.CalendarHead {
+	background: #808080;
+	color: white;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+A.CalendarHead:link    {text-decoration: underline; FONT-SIZE: 9pt; font-weight: bold; color: white}
+A.CalendarHead:visited {text-decoration: underline; FONT-SIZE: 9pt; font-weight: bold; color: white}
+A.CalendarHead:active  {text-decoration: underline; FONT-SIZE: 9pt; font-weight: bold; color: white;background-color:#808080}
+A.CalendarHead:hover   {text-decoration: none; FONT-SIZE: 9pt; font-weight: bold; color: yellow;background-color:#808080}
+
+
+A.main_title_table:link    {text-decoration: underline; FONT-SIZE: 9pt; font-weight: normal; color: white; font-family: verdana, Geneva, Arial, Helvetica, sans-serif;}
+A.main_title_table:visited {text-decoration: underline; FONT-SIZE: 9pt; font-weight: normal; color: white; font-family: verdana, Geneva, Arial, Helvetica, sans-serif;}
+A.main_title_table:active  {text-decoration: underline; FONT-SIZE: 9pt; font-weight: normal; color: white; font-family: verdana, Geneva, Arial, Helvetica, sans-serif;}
+A.main_title_table:hover   {text-decoration: underline; FONT-SIZE: 9pt; font-weight: normal; color: yellow; font-family: verdana, Geneva, Arial, Helvetica, sans-serif;}
+
+
+TABLE.title_666666 {
+	background: #666666;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: white;
+	font-size: 10px;
+	font-weight: bold
+}
+TR.title_666666 {
+	background: #666666;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: white;
+	font-size: 10px;
+	font-weight: bold
+}
+
+TD.title_666666 {
+	background: #666666;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: white;
+	font-size: 10px;
+	font-weight: bold
+}
+
+
+TABLE.CalendarRow {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+TR.CalendarRow {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+TD.CalendarRow {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+TABLE.Lower_Title {
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+TR.Lower_Title {
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+TD.Lower_Title {
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+
+TABLE.Row_1 {
+	background: #999999;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+TR.Row_1 {
+	background: #999999;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+TD.Row_1 {
+	background: #999999;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+
+TABLE.Row_2 {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+TR.Row_2 {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+TD.Row_2 {
+	background: #CCCCCC;
+	color: black;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal
+}
+
+/* Added for Vytek User, Group Screens. */
+
+.Title1, TR.Title1, TD.Title1 {
+    BACKGROUND-COLOR: #FFFFE6;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 16pt;
+    COLOR: #666666
+}
+
+.Title2, TR.Title2, TD.Title2 {
+    BACKGROUND-COLOR: #FF9933;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10pt;
+    COLOR: #FFFFFF
+}
+
+.LeftMenuSel, TR.LeftMenuSel, TD.LeftMenuSel {
+    BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10pt;
+	LINE-HEIGHT: 25px;
+    COLOR: #000000
+}
+
+.LeftMenu, TR.LeftMenu, TD.LeftMenu {
+    BACKGROUND-COLOR: #FF9933;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10pt;
+	LINE-HEIGHT: 25px;
+    COLOR: #FFFFEE
+}
+
+.LeftSubMenuSel, TR.LeftSubMenuSel, TD.LeftSubMenuSel {
+    BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+	LINE-HEIGHT: 25px;
+    COLOR: #000000
+}
+
+.LeftSubMenu, TR.LeftSubMenu, TD.LeftSubMenu {
+    BACKGROUND-COLOR: #FF9933;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+	LINE-HEIGHT: 20px;
+    COLOR: #FFFFEE
+}
+
+.Mandatory, TR.Mandatory, TD.Mandatory {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt
+}
+
+.Optional, TR.Optional, TD.Optional {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt
+}
+
+.TopMenu, TR.TopMenu, TD.TopMenu {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    COLOR: #666666
+}
+
+.TopMenuSel, TR.TopMenuSel, TD.TopMenuSel {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    COLOR: #666666
+}
+.GroupMembersBorder, TR.GroupMembersBorder, TD.GroupMembersBorder {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    BACKGROUND-COLOR: #999999;
+    COLOR: #333333
+}
+
+.GroupMembersCD, TR.GroupMembersCD, TD.GroupMembersCD {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    BACKGROUND-COLOR: #FFFFFF;
+    COLOR: #000000
+}
+
+A.GroupMembersCD:link    {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #0000FF}
+A.GroupMembersCD:visited {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #990099}
+A.GroupMembersCD:active  {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #CC0000}
+A.GroupMembersCD:hover   {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #CC0000}
+
+
+.GroupMembersSubGroup, TR.GroupMembersSubGroup, TD.GroupMembersSubGroup {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    BACKGROUND-COLOR: #CCCCFF;
+    COLOR: #000000
+}
+
+A.GroupMembersSubGroup:link    {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #0000FF}
+A.GroupMembersSubGroup:visited {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #990099}
+A.GroupMembersSubGroup:active  {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #CC0000}
+A.GroupMembersSubGroup:hover   {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #CC0000}
+
+.GroupMembersHeaderDel, TR.GroupMembersHeaderDel, TD.GroupMembersHeaderDel {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    BACKGROUND-COLOR: #CCCCCC;
+    COLOR: #333333
+}
+
+.GroupMembersHeader, TR.GroupMembersHeader, TD.GroupMembersHeader {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #CCCCCC;
+    COLOR: #333333
+}
+
+.GroupMembers, TR.GroupMembers, TD.GroupMembers {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    BACKGROUND-COLOR: #FFFFFF;
+    COLOR: #000000
+}
+
+A.GroupMembers:link    {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #0000FF}
+A.GroupMembers:visited {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #990099}
+A.GroupMembers:active  {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #CC0000}
+A.GroupMembers:hover   {text-decoration: underline; FONT-SIZE: 8pt; font-weight: normal; color: #CC0000}
+
+.Error, TR.Error, TD.Error {
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    COLOR: #CC0000
+}

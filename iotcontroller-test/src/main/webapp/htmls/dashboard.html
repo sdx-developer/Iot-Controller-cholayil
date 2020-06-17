@@ -1,0 +1,942 @@
+<<style>
+<!--
+.cardT {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 500px;
+}
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+h2 {
+  color: white;
+}
+-->
+</style>
+<script>
+	src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" >
+</script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap4.min.js"></script>
+<script>
+	$(document).ready(function() {
+		PerformancePayload();
+	});
+	function PerformancePayload() {
+		var perpayload = $("#performance");
+		$.ajax({
+			url : '/rk/sdx/cds/properties/performance',
+			type : 'get',
+			dataType : 'text',
+			contentType : 'application/text',
+			success : function(data) {
+				perpayload.append(data);
+			},
+		/* console.log(data); */
+		});
+	}
+	$(document).ready(function() {
+		QualityPayload();
+	});
+	function QualityPayload() {
+		var perpayload = $("#quality");
+		$.ajax({
+			url : '/rk/sdx/cds/properties/quality',
+			type : 'get',
+			dataType : 'text',
+			contentType : 'application/text',
+			success : function(data) {
+				perpayload.append(data);
+			},
+		/* console.log(data); */
+		});
+	}
+
+	$(document).ready(function() {
+		StampingEventsToday();
+		AllEventsToday();
+		LatestStampingCount();
+		ErrorCount();
+		LatestFlowWrapCount();
+		setInterval(function() {
+			realTimeStatus();
+		}, 5000);
+	});
+
+	$(document).ready(function() {
+		setInterval(function() {
+			var randomnumber = realstatus;
+			$('#realTimeDiv').text(' ' + randomnumber);
+		}, 4000);
+	});
+
+	function StampingEventsToday() {
+		var events = $("#count");
+		$.ajax({
+			url : '/rk/sdx/cds/properties/StampingEventsToday',
+			type : 'get',
+			dataType : 'json',
+			contentType : 'application/json',
+			success : function(data) {
+				events.append(data);
+			},
+		/* console.log(data); */
+		});
+	}
+
+	function AllEventsToday() {
+		var eventscount = $("#counttt");
+		$.ajax({
+			url : '/rk/sdx/cds/properties/AllEventsToday',
+			type : 'get',
+			dataType : 'json',
+			contentType : 'application/json',
+			success : function(data) {
+				eventscount.append(data);
+			},
+		});
+
+	}
+
+	$.fn.dataTable.ext.errMode = 'none';
+	$('#datatables-clients').DataTable( {
+        "ajax": {
+            "url": "/rk/sdx/cds/properties/performance",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "stationName" },
+            { "data": "stationCode" },
+            { "data": "shiftNo" },
+            { "data": "metricType" },
+            { "data": "goodCount" },
+            { "data": "totalProductionCount" },
+            { "data": "downStartTime" },
+            { "data": "downEndTime" },
+            { "data": "time" },
+            
+			],
+			"columnDefs": [ {
+				"targets": 0,
+				//"data": "picture",
+			  }, {
+				"targets": 1,
+				"data": "",
+				"render": function ( data, type, row, meta ) {
+				  return '<a role="editor" href="#" id="uID'+row['_id']+'">'+data+"</a>";
+				}
+			  } ]
+		} );
+	
+	
+	
+	
+	function LatestStampingCount() {
+		var counter = $("#value");
+		$.ajax({
+			url : '/rk/sdx/cds/properties/LatestStampingCount',
+			type : 'get',
+			dataType : 'json',
+			contentType : 'application/json',
+			success : function(data) {
+				counter.append(data);
+			},
+		});
+	}
+	
+	function LatestFlowWrapCount() {
+		var counter = $("#flowrapValue");
+		$.ajax({
+			url : '/rk/sdx/cds/properties/LatestFlowWrapCount',
+			type : 'get',
+			dataType : 'json',
+			contentType : 'application/json',
+			success : function(data) {
+				counter.append(data);
+			},
+		});
+	}
+	function ErrorCount() {
+		var counter = $("#error");
+		$.ajax({
+			url : '/rk/sdx/cds/properties/errorCount',
+			type : 'get',
+			dataType : 'json',
+			contentType : 'application/json',
+			success : function(data) {
+				counter.append(data);
+			},
+		});
+	}
+</script>
+<div class="row" style="min-height: 525px !important">
+	<div class="row">
+		<div class="col-xl-7">
+			<div class="card flex-fill w-100">
+				<div class="card-header">
+					<div class="card-actions float-right">
+						<a href="#" class="mr-1"> <!-- <svg
+								xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+								viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								class="feather feather-refresh-cw align-middle">
+							<polyline points="23 4 23 10 17 10" />
+							<polyline points="1 20 1 14 7 14" />
+							<path
+									d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+						</svg> -->
+						</a>
+						<div class="d-inline-block dropdown show">
+							<a href="#" data-toggle="dropdown" data-display="static"> <svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="feather feather-more-vertical align-middle">
+								<circle cx="12" cy="12" r="1" />
+								<circle cx="12" cy="5" r="1" />
+								<circle cx="12" cy="19" r="1" />
+							</svg>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Action</a> <a
+									class="dropdown-item" href="#">Another action</a> <a
+									class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</div>
+					</div>
+					<h5 class="card-title mb-0">Recent Events</h5>
+
+				</div>
+				<div class="card-body py-3">
+						
+									<table id="datatables-clients"
+										class="table table-striped dataTable no-footer dtr-inline"
+										style="width: 100%">
+										<thead>
+
+											<tr>
+												<th>Station Code</th>
+												<th>Station Name</th>
+												<th>Shift No</th>
+												<th>Metric Type</th>
+												<th>Good Count</th>
+												<th>Total Production Count</th>
+												 <th>Down start Time</th>
+                                                <th>Down end Time</th>
+                                                 <th>Time</th>
+										</thead>
+
+									</table>
+								
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-5 d-flex">
+		
+			<div class="w-100">
+
+				<!-- <div class="card flex-fill bg-danger text-white">
+					<div class="card-header">
+						<h5 class="card-title text-white mb-0">Status</h5>
+					</div>
+					<div class="card-body py-3">
+						<div class="row no-gutters">
+							<div class="col-4 align-self-center text-left">
+								<div class="icon icon-danger">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+										viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"
+										class="feather feather-users align-middle">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+<circle cx="9" cy="7" r="4" />
+<path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+<path d="M16 3.13a4 4 0 0 1 0 7.75" />
+</svg>
+								</div>
+							</div>
+							
+							<div id="realTimeStatus"
+								class="col-8 align-self-center text-right">
+								<p class="text-white mb-1" id="status"></p>
+								<h2 class="text-white"> 17212 </h2>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				
+ -->
+<script>
+myFunction();
+
+function realTimeStatus() {
+  var carName = "Volvo";
+  $.ajax({
+		url : '/rk/sdx/cds/properties/realTimeStats',
+		type : 'get',
+		dataType : 'json',
+		contentType : 'application/json',
+		success : function(data) {
+			console.log("____________________________________"+data);
+			document.getElementById("shiftST").innerHTML =data.shiftStartTime;
+			document.getElementById("totalProduction").innerHTML =data.TotalProduction;
+			document.getElementById("totalGoodCount").innerHTML =data.totalGoodCount;
+			document.getElementById("machineSDT").innerHTML =data.machineSDT;
+			document.getElementById("machineEDT").innerHTML =data.machineEDT;
+			document.getElementById("shiftET").innerHTML =data.shiftEndTime;
+			//document.getElementById("flowrapValue1").innerHTML =data.flowrapCount;
+			document.getElementById("k").innerHTML =data.status;
+			//document.getElementById("LSTvalue").innerHTML =data.stampingCount;
+			document.getElementById("downtimereason").innerHTML =data.downTimeReason;
+			//document.getElementById("stampingEventTodaycount").innerHTML =data.stampingEventToday;
+			//document.getElementById("allEventsToday").innerHTML =data.allEventsToday;
+			
+		},
+	});
+  
+}
+</script>
+				<div class="row" id="realTimeDiv">
+				<div class="cardT card-2" onload="realTimeStatus()">
+				
+				<h2 style="text-align:center;" font color="WHITE" ><font color="WHITE"><h2 style="background:#00cc66" font color="WHITE">Real Time Status</h2></font></h2><br>
+				<h2></h2> &nbsp;&nbsp;<h4 style='display:inline'>Shift Start Time :  </h4><p style='display:inline'id="shiftST"></p><h6></h6>
+				   &nbsp;&nbsp;<h4 style='display:inline'>Stamping Machine Total Produced Pieces : </h4><p style='display:inline'id="totalProduction"></p><h6></h6>
+				 &nbsp; <h4 style='display:inline'>FlowWrap Machine Total Good Pieces :  </h4><p style='display:inline'id="totalGoodCount"></p><h6></h6>
+				     &nbsp;&nbsp;<h4 style='display:inline'>UnPlanned DownTime Start :  </h4><p style='display:inline'id="machineSDT"></p><h6></h6>
+				    &nbsp; <h4 style='display:inline'>UnPlanned DownTime End :  </h4><p style='display:inline'id="machineEDT"></p><h6></h6>
+				     &nbsp; <h4 style='display:inline'>UnPlanned DownTime Reason :  </h4><p style='display:inline'id="downtimereason"></p><h6></h6>
+				     &nbsp;&nbsp; <h4 style='display:inline'>Shift End Time   :  </h4><p style='display:inline'id="shiftET"></p><h6></h6><br>
+				         <h2 style="text-align:bottom:;" ><font color="WHITE"><marquee direction="right" style="background:#00cc66"><p style='display:inline'id="k"></p>  </marquee></font></h2><br>
+			
+			
+				</div>
+				
+					<div class="col-sm-6">
+						<div class="card flex-fill bg-warning text-white">
+							<div class="card-header">
+								<h5 class="card-title text-white mb-0">All Events Today</h5>
+							</div>
+							<div class="card-body py-3">
+								<div class="row no-gutters">
+									<div class="col-4 align-self-center text-left">
+										<div class="icon icon-warning">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24"
+												height="24" viewBox="0 0 24 24" fill="none"
+												stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round"
+												class="feather feather-truck align-middle">
+											<rect x="1" y="3" width="15" height="13" />
+											<polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+											<circle cx="5.5" cy="18.5" r="2.5" />
+											<circle cx="18.5" cy="18.5" r="2.5" />
+										</svg>
+										</div>
+									</div>
+									<div class="col-8 align-self-center text-right">
+										<p class="text-white mb-1" id="counttt"></p>
+										<!--<h2 class="text-white">2562</h2>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card flex-fill bg-info text-white">
+							<div class="card-header">
+								<h5 class="card-title text-white mb-0">Stamping Events
+									Today</h5>
+							</div>
+							<div class="card-body py-3">
+								<div class="row no-gutters">
+									<div class="col-4 align-self-center text-left">
+										<div class="icon icon-info">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24"
+												height="24" viewBox="0 0 24 24" fill="none"
+												stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round"
+												class="feather feather-users align-middle">
+											<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+											<circle cx="9" cy="7" r="4" />
+											<path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+											<path d="M16 3.13a4 4 0 0 1 0 7.75" />
+										</svg>
+										</div>
+									</div>
+									<div class="col-8 align-self-center text-right">
+										<p class="text-white mb-1" id="count"></p>
+										<!--<h2 class="text-white"> 17212 </h2>-->
+
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-sm-6">
+						<div class="card flex-fill bg-success text-white">
+							<div class="card-header">
+								<h5 class="card-title text-white mb-0">Latest Stamping
+									count</h5>
+							</div>
+							<div class="card-body py-3">
+								<div class="row no-gutters">
+									<div class="col-4 align-self-center text-left">
+										<div class="icon icon-success">
+											<img src="assets/images/icons/stamping.png"
+												class="img-fluid rounded-circle mb-2">
+										</div>
+									</div>
+									<div class="col-8 align-self-center text-right">
+										<p class="text-white mb-1" id="value"></p>
+										<!--<h2 class="text-white">1</h2>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card flex-fill bg-primary text-white">
+							<div class="card-header">
+								<h5 class="card-title text-white mb-0">Latest Flowrap Count</h5>
+							</div>
+							<div class="card-body py-3">
+								<div class="row no-gutters">
+									<div class="col-4 align-self-center text-left">
+										<div class="icon icon-primary">
+											<img src="assets/images/icons/stamping.png"
+												class="img-fluid rounded-circle mb-2">
+										</div>
+									</div>
+									<div class="col-8 align-self-center text-right">
+										<p class="text-white mb-1" id="flowrapValue"></p>
+										<!--<h2 class="text-white">2562</h2>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card flex-fill bg-warning text-white">
+							<div class="card-header">
+								<h5 class="card-title text-white mb-0">Failed Events</h5>
+							</div>
+							<div class="card-body py-3">
+								<div class="row no-gutters">
+									<div class="col-4 align-self-center text-left">
+										<div class="icon icon-warning">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24"
+												height="24" viewBox="0 0 24 24" fill="none"
+												stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round"
+												class="feather feather-shopping-cart align-middle">
+											<circle cx="9" cy="21" r="1" />
+											<circle cx="20" cy="21" r="1" />
+											<path
+													d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+										</svg>
+										</div>
+									</div>
+									<div class="col-8 align-self-center text-right">
+										<p class="text-white mb-1" id="error"></p>
+										<!-- <h2 class="text-white">None</h2> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="row">
+		<div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
+			<div class="card flex-fill">
+				<div class="card-header">
+					<div class="card-actions float-right">
+						<a href="#" class="mr-1"> <svg
+								xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+								viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								class="feather feather-refresh-cw align-middle">
+							<polyline points="23 4 23 10 17 10" />
+							<polyline points="1 20 1 14 7 14" />
+							<path
+									d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+						</svg>
+						</a>
+						<div class="d-inline-block dropdown show">
+							<a href="#" data-toggle="dropdown" data-display="static"> <svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="feather feather-more-vertical align-middle">
+								<circle cx="12" cy="12" r="1" />
+								<circle cx="12" cy="5" r="1" />
+								<circle cx="12" cy="19" r="1" />
+							</svg>
+							</a>
+
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Action</a> <a
+									class="dropdown-item" href="#">Another action</a> <a
+									class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</div>
+					</div>
+					<h5 class="card-title mb-0">Calendar</h5>
+				</div>
+				<div class="card-body d-flex">
+					<div class="align-self-center w-100">
+						<div class="chart">
+							<div id="datetimepicker-dashboard">
+								<div class="bootstrap-datetimepicker-widget usetwentyfour">
+									<ul class="list-unstyled">
+										<li class="show">
+											<div class="datepicker">
+												<div class="datepicker-days" style="">
+													<table class="table table-sm">
+														<thead>
+															<tr>
+																<th class="prev" data-action="previous"><span
+																	class="fas fa-chevron-left" title="Previous Month" /></th>
+																<th class="picker-switch" data-action="pickerSwitch"
+																	colspan="5" title="Select Month">October 2019</th>
+																<th class="next" data-action="next"><span
+																	class="fas fa-chevron-right" title="Next Month" /></th>
+															</tr>
+															<tr>
+																<th class="dow">Su</th>
+																<th class="dow">Mo</th>
+																<th class="dow">Tu</th>
+																<th class="dow">We</th>
+																<th class="dow">Th</th>
+																<th class="dow">Fr</th>
+																<th class="dow">Sa</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td data-action="selectDay" data-day="09/29/2019"
+																	class="day old weekend">29</td>
+																<td data-action="selectDay" data-day="09/30/2019"
+																	class="day old">30</td>
+																<td data-action="selectDay" data-day="10/01/2019"
+																	class="day">1</td>
+																<td data-action="selectDay" data-day="10/02/2019"
+																	class="day">2</td>
+																<td data-action="selectDay" data-day="10/03/2019"
+																	class="day">3</td>
+																<td data-action="selectDay" data-day="10/04/2019"
+																	class="day">4</td>
+																<td data-action="selectDay" data-day="10/05/2019"
+																	class="day weekend">5</td>
+															</tr>
+															<tr>
+																<td data-action="selectDay" data-day="10/06/2019"
+																	class="day weekend">6</td>
+																<td data-action="selectDay" data-day="10/07/2019"
+																	class="day">7</td>
+																<td data-action="selectDay" data-day="10/08/2019"
+																	class="day">8</td>
+																<td data-action="selectDay" data-day="10/09/2019"
+																	class="day">9</td>
+																<td data-action="selectDay" data-day="10/10/2019"
+																	class="day">10</td>
+																<td data-action="selectDay" data-day="10/11/2019"
+																	class="day">11</td>
+																<td data-action="selectDay" data-day="10/12/2019"
+																	class="day weekend">12</td>
+															</tr>
+															<tr>
+																<td data-action="selectDay" data-day="10/13/2019"
+																	class="day weekend">13</td>
+																<td data-action="selectDay" data-day="10/14/2019"
+																	class="day">14</td>
+																<td data-action="selectDay" data-day="10/15/2019"
+																	class="day">15</td>
+																<td data-action="selectDay" data-day="10/16/2019"
+																	class="day">16</td>
+																<td data-action="selectDay" data-day="10/17/2019"
+																	class="day">17</td>
+																<td data-action="selectDay" data-day="10/18/2019"
+																	class="day active today">18</td>
+																<td data-action="selectDay" data-day="10/19/2019"
+																	class="day weekend">19</td>
+															</tr>
+															<tr>
+																<td data-action="selectDay" data-day="10/20/2019"
+																	class="day weekend">20</td>
+																<td data-action="selectDay" data-day="10/21/2019"
+																	class="day">21</td>
+																<td data-action="selectDay" data-day="10/22/2019"
+																	class="day">22</td>
+																<td data-action="selectDay" data-day="10/23/2019"
+																	class="day">23</td>
+																<td data-action="selectDay" data-day="10/24/2019"
+																	class="day">24</td>
+																<td data-action="selectDay" data-day="10/25/2019"
+																	class="day">25</td>
+																<td data-action="selectDay" data-day="10/26/2019"
+																	class="day weekend">26</td>
+															</tr>
+															<tr>
+																<td data-action="selectDay" data-day="10/27/2019"
+																	class="day weekend">27</td>
+																<td data-action="selectDay" data-day="10/28/2019"
+																	class="day">28</td>
+																<td data-action="selectDay" data-day="10/29/2019"
+																	class="day">29</td>
+																<td data-action="selectDay" data-day="10/30/2019"
+																	class="day">30</td>
+																<td data-action="selectDay" data-day="10/31/2019"
+																	class="day">31</td>
+																<td data-action="selectDay" data-day="11/01/2019"
+																	class="day new">1</td>
+																<td data-action="selectDay" data-day="11/02/2019"
+																	class="day new weekend">2</td>
+															</tr>
+															<tr>
+																<td data-action="selectDay" data-day="11/03/2019"
+																	class="day new weekend">3</td>
+																<td data-action="selectDay" data-day="11/04/2019"
+																	class="day new">4</td>
+																<td data-action="selectDay" data-day="11/05/2019"
+																	class="day new">5</td>
+																<td data-action="selectDay" data-day="11/06/2019"
+																	class="day new">6</td>
+																<td data-action="selectDay" data-day="11/07/2019"
+																	class="day new">7</td>
+																<td data-action="selectDay" data-day="11/08/2019"
+																	class="day new">8</td>
+																<td data-action="selectDay" data-day="11/09/2019"
+																	class="day new weekend">9</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="datepicker-months" style="display: none;">
+													<table class="table-condensed">
+														<thead>
+															<tr>
+																<th class="prev" data-action="previous"><span
+																	class="fas fa-chevron-left" title="Previous Year" /></th>
+																<th class="picker-switch" data-action="pickerSwitch"
+																	colspan="5" title="Select Year">2019</th>
+																<th class="next" data-action="next"><span
+																	class="fas fa-chevron-right" title="Next Year" /></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td colspan="7"><span data-action="selectMonth"
+																	class="month">Jan</span> <span
+																	data-action="selectMonth" class="month">Feb</span> <span
+																	data-action="selectMonth" class="month">Mar</span> <span
+																	data-action="selectMonth" class="month">Apr</span> <span
+																	data-action="selectMonth" class="month">May</span> <span
+																	data-action="selectMonth" class="month">Jun</span> <span
+																	data-action="selectMonth" class="month">Jul</span> <span
+																	data-action="selectMonth" class="month">Aug</span> <span
+																	data-action="selectMonth" class="month">Sep</span> <span
+																	data-action="selectMonth" class="month active">Oct</span>
+																	<span data-action="selectMonth" class="month">Nov</span>
+																	<span data-action="selectMonth" class="month">Dec</span>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="datepicker-years" style="display: none;">
+													<table class="table-condensed">
+														<thead>
+															<tr>
+																<th class="prev" data-action="previous"><span
+																	class="fas fa-chevron-left" title="Previous Decade" />
+																</th>
+																<th class="picker-switch" data-action="pickerSwitch"
+																	colspan="5" title="Select Decade">2010-2019</th>
+																<th class="next" data-action="next"><span
+																	class="fas fa-chevron-right" title="Next Decade" /></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td colspan="7"><span data-action="selectYear"
+																	class="year old">2009</span> <span
+																	data-action="selectYear" class="year">2010</span> <span
+																	data-action="selectYear" class="year">2011</span> <span
+																	data-action="selectYear" class="year">2012</span> <span
+																	data-action="selectYear" class="year">2013</span> <span
+																	data-action="selectYear" class="year">2014</span> <span
+																	data-action="selectYear" class="year">2015</span> <span
+																	data-action="selectYear" class="year">2016</span> <span
+																	data-action="selectYear" class="year">2017</span> <span
+																	data-action="selectYear" class="year">2018</span> <span
+																	data-action="selectYear" class="year active">2019</span>
+																	<span data-action="selectYear" class="year old">2020</span>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="datepicker-decades" style="display: none;">
+													<table class="table-condensed">
+														<thead>
+															<tr>
+																<th class="prev" data-action="previous"><span
+																	class="fas fa-chevron-left" title="Previous Century" />
+																</th>
+																<th class="picker-switch" data-action="pickerSwitch"
+																	colspan="5">2000-2090</th>
+																<th class="next" data-action="next"><span
+																	class="fas fa-chevron-right" title="Next Century" /></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td colspan="7"><span data-action="selectDecade"
+																	class="decade old" data-selection="2006">1990</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2006">2000</span> <span
+																	data-action="selectDecade" class="decade active"
+																	data-selection="2016">2010</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2026">2020</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2036">2030</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2046">2040</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2056">2050</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2066">2060</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2076">2070</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2086">2080</span> <span
+																	data-action="selectDecade" class="decade"
+																	data-selection="2096">2090</span> <span
+																	data-action="selectDecade" class="decade old"
+																	data-selection="2106">2100</span></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</li>
+										<li class="picker-switch accordion-toggle" />
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-3">
+			<div class="card flex-fill w-100">
+				<div class="card-header">
+
+					<h5 class="card-title mb-0">Modules in execution</h5>
+				</div>
+				<div class="card-body px-4">
+					<div id="world_map" style="height: 350px;"></div>
+				</div>
+			</div>
+		</div>
+ -->
+	<!-- <div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-3">
+			<div class="card flex-fill w-100">
+				<div class="card-header">
+					<div class="card-actions float-right">
+						<a href="#" class="mr-1"> <svg
+								xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+								viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								class="feather feather-refresh-cw align-middle">
+							<polyline points="23 4 23 10 17 10" />
+							<polyline points="1 20 1 14 7 14" />
+							<path
+									d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+						</svg>
+						</a>
+						<div class="d-inline-block dropdown show">
+							<a href="#" data-toggle="dropdown" data-display="static"> <svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="feather feather-more-vertical align-middle">
+								<circle cx="12" cy="12" r="1" />
+								<circle cx="12" cy="5" r="1" />
+								<circle cx="12" cy="19" r="1" />
+							</svg>
+							</a>
+
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Action</a> <a
+									class="dropdown-item" href="#">Another action</a> <a
+									class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</div>
+					</div>
+					<h5 class="card-title mb-0">Utilization</h5>
+				</div>
+				<div class="card-body d-flex">
+					<div class="align-self-center w-100">
+						<div class="py-3">
+							<div class="chart chart-xs">
+								<div class="chartjs-size-monitor">
+									<div class="chartjs-size-monitor-expand">
+										<div class="" />
+									</div>
+									<div class="chartjs-size-monitor-shrink">
+										<div class="" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<table class="table mb-0">
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12 col-lg-8 col-xxl-9 d-flex">
+			<div class="card flex-fill">
+				<div class="card-header">
+					<div class="card-actions float-right">
+						<a href="#" class="mr-1"> <svg
+								xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+								viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								class="feather feather-refresh-cw align-middle">
+							<polyline points="23 4 23 10 17 10" />
+							<polyline points="1 20 1 14 7 14" />
+							<path
+									d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+						</svg>
+						</a>
+						<div class="d-inline-block dropdown show">
+							<a href="#" data-toggle="dropdown" data-display="static"> <svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="feather feather-more-vertical align-middle">
+								<circle cx="12" cy="12" r="1" />
+								<circle cx="12" cy="5" r="1" />
+								<circle cx="12" cy="19" r="1" />
+							</svg>
+							</a>
+
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Action</a> <a
+									class="dropdown-item" href="#">Another action</a> <a
+									class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</div>
+					</div>
+					<h5 class="card-title mb-0">Top Selling Products</h5>
+				</div>
+				<div id="datatables-dashboard_wrapper"
+					class="dataTables_wrapper dt-bootstrap4 no-footer">
+					<div class="row">
+						<div class="col-sm-12 col-md-6" />
+						<div class="col-sm-12 col-md-6" />
+					</div>
+					<div class="row">
+						<div class="col-sm-12"></div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 col-md-5">
+							<div class="dataTables_info" id="datatables-dashboard_info"
+								role="status" aria-live="polite">Showing 1 to 6 of 9
+								entries</div>
+						</div>
+						<div class="col-sm-12 col-md-7">
+							<div class="dataTables_paginate paging_simple_numbers"
+								id="datatables-dashboard_paginate">
+								<ul class="pagination">
+									<li class="paginate_button page-item previous disabled"
+										id="datatables-dashboard_previous"><a href="#"
+										aria-controls="datatables-dashboard" data-dt-idx="0"
+										tabindex="0" class="page-link">Previous</a></li>
+									<li class="paginate_button page-item active"><a href="#"
+										aria-controls="datatables-dashboard" data-dt-idx="1"
+										tabindex="0" class="page-link">1</a></li>
+									<li class="paginate_button page-item "><a href="#"
+										aria-controls="datatables-dashboard" data-dt-idx="2"
+										tabindex="0" class="page-link">2</a></li>
+									<li class="paginate_button page-item next"
+										id="datatables-dashboard_next"><a href="#"
+										aria-controls="datatables-dashboard" data-dt-idx="3"
+										tabindex="0" class="page-link">Next</a></li> +
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-4 col-xxl-3 d-flex">
+			<div class="card flex-fill w-100">
+				<div class="card-header">
+					<div class="card-actions float-right">
+						<a href="#" class="mr-1"> <svg
+								xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+								viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								class="feather feather-refresh-cw align-middle">
+							<polyline points="23 4 23 10 17 10" />
+							<polyline points="1 20 1 14 7 14" />
+							<path
+									d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+						</svg>
+						</a>
+						<div class="d-inline-block dropdown show">
+							<a href="#" data-toggle="dropdown" data-display="static"> <svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="feather feather-more-vertical align-middle">
+								<circle cx="12" cy="12" r="1" />
+								<circle cx="12" cy="5" r="1" />
+								<circle cx="12" cy="19" r="1" />
+							</svg>
+							</a>
+
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Action</a> <a
+									class="dropdown-item" href="#">Another action</a> <a
+									class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</div>
+					</div>
+					<h5 class="card-title mb-0">Monthly Sales</h5>
+				</div>
+				<div class="card-body d-flex w-100">
+					<div class="align-self-center chart chart-lg">
+						<div class="chartjs-size-monitor">
+							<div class="chartjs-size-monitor-expand">
+								<div class="" />
+							</div>
+							<div class="chartjs-size-monitor-shrink">
+								<div class="" />
+							</div>
+						</div>
+						<canvas id="chartjs-dashboard-bar" width="307" height="437"
+							class="chartjs-render-monitor"
+							style="display: block; height: 350px; width: 246px;" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->

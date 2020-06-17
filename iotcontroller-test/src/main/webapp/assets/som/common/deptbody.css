@@ -1,0 +1,54 @@
+BODY {
+	background: #ffffff
+	margin-top: 0em;
+	margin-right: 0em;
+    	margin-bottom: 0em;
+    	margin-left: 0em
+}
+.save_error_depttree {
+	color: #FF0000;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: normal
+}
+.popupLink {
+	COLOR: red;
+	outline: none
+}
+.layermesage {
+	BORDER-RIGHT: black 1px solid;
+	PADDING-RIGHT: 3px;
+	BORDER-TOP: black 1px solid;
+	PADDING-LEFT: 3px;
+	Z-INDEX: 10;
+	VISIBILITY: hidden;
+	PADDING-BOTTOM: 3px;
+	BORDER-LEFT: black 1px solid;
+	PADDING-TOP: 3px;
+	BORDER-BOTTOM: black 1px solid;
+	POSITION: absolute;
+    overflow:auto;
+    BACKGROUND-COLOR:#DFDFFF;
+    font-weight: normal
+ }
+.propertylayermessage {
+	BORDER-RIGHT: black 1px solid;
+	PADDING-RIGHT: 3px;
+	BORDER-TOP: black 1px solid;
+	PADDING-LEFT: 3px;
+	Z-INDEX: 10;
+	VISIBILITY: hidden;
+	PADDING-BOTTOM: 3px;
+	BORDER-LEFT: black 1px solid;
+	PADDING-TOP: 3px;
+	BORDER-BOTTOM: black 1px solid;
+	POSITION: absolute;
+    overflow:auto;
+    WIDTH: 350px;
+	HEIGHT: 110px;
+    BACKGROUND-COLOR: #DFDFFF;
+    font-weight: normal
+ }
+.cursorStyle {
+    cursor: e-resize;
+    }

@@ -1,0 +1,1200 @@
+<html lang="en" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
+	<meta name="author" content="Bootlab">
+
+	<title>Spark - Responsive Admin &amp; Dashboard Template</title>
+
+	<!-- PICK ONE OF THE STYLES BELOW -->
+	<!-- <link href="css/modern.css" rel="stylesheet"> -->
+	<!-- <link href="css/classic.css" rel="stylesheet"> -->
+	<!-- <link href="css/dark.css" rel="stylesheet"> -->
+	<!-- <link href="css/light.css" rel="stylesheet"> -->
+
+	<!-- BEGIN SETTINGS -->
+	<!-- You can remove this after picking a style -->
+	<style>
+		body {
+			opacity: 0;
+		}
+	</style>
+	<script src="js/settings.js"></script><link href="css/modern.css" type="text/css" rel="stylesheet">
+	<!-- END SETTINGS -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-120946860-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120946860-7');
+</script><style type="text/css">.apexcharts-canvas {
+  position: relative;
+  user-select: none;
+  /* cannot give overflow: hidden as it will crop tooltips which overflow outside chart area */
+}
+
+/* scrollbar is not visible by default for legend, hence forcing the visibility */
+.apexcharts-canvas ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(255,255,255,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+.apexcharts-canvas.dark {
+  background: #343F57;
+}
+
+.apexcharts-inner {
+  position: relative;
+}
+
+.legend-mouseover-inactive {
+  transition: 0.15s ease all;
+  opacity: 0.20;
+}
+
+.apexcharts-series-collapsed {
+  opacity: 0;
+}
+
+.apexcharts-gridline, .apexcharts-text {
+  pointer-events: none;
+}
+
+.apexcharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px -4px #999;
+  cursor: default;
+  font-size: 14px;
+  left: 62px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 12;
+  transition: 0.15s ease all;
+}
+.apexcharts-tooltip.light {
+  border: 1px solid #e3e3e3;
+  background: rgba(255, 255, 255, 0.96);
+}
+.apexcharts-tooltip.dark {
+  color: #fff;
+  background: rgba(30,30,30, 0.8);
+}
+.apexcharts-tooltip * {
+  font-family: inherit;
+}
+
+.apexcharts-tooltip .apexcharts-marker,
+.apexcharts-area-series .apexcharts-area,
+.apexcharts-line {
+  pointer-events: none;
+}
+
+.apexcharts-tooltip.active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip-title {
+  padding: 6px;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.apexcharts-tooltip.light .apexcharts-tooltip-title {
+  background: #ECEFF1;
+  border-bottom: 1px solid #ddd;
+}
+.apexcharts-tooltip.dark .apexcharts-tooltip-title {
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #333;
+}
+
+.apexcharts-tooltip-text-value,
+.apexcharts-tooltip-text-z-value {
+  display: inline-block;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.apexcharts-tooltip-text-z-label:empty,
+.apexcharts-tooltip-text-z-value:empty {
+  display: none;
+}
+
+.apexcharts-tooltip-text-value, 
+.apexcharts-tooltip-text-z-value {
+  font-weight: 600;
+}
+
+.apexcharts-tooltip-marker {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.apexcharts-tooltip-series-group {
+  padding: 0 10px;
+  display: none;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+}
+
+.apexcharts-tooltip-series-group.active .apexcharts-tooltip-marker {
+  opacity: 1;
+}
+.apexcharts-tooltip-series-group.active, .apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 4px;
+}
+.apexcharts-tooltip-y-group {
+  padding: 6px 0 5px;
+}
+.apexcharts-tooltip-candlestick {
+  padding: 4px 8px;
+}
+.apexcharts-tooltip-candlestick > div {
+  margin: 4px 0;
+}
+.apexcharts-tooltip-candlestick span.value {
+  font-weight: bold;
+}
+
+.apexcharts-tooltip-rangebar {
+  padding: 5px 8px;
+}
+
+.apexcharts-tooltip-rangebar .category {
+  font-weight: 600;
+  color: #777;
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.apexcharts-xaxistooltip {
+  opacity: 0;
+  padding: 9px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+	background: #ECEFF1;
+  border: 1px solid #90A4AE;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xaxistooltip.dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-xaxistooltip:after, .apexcharts-xaxistooltip:before {
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.apexcharts-xaxistooltip:after {
+	border-color: rgba(236, 239, 241, 0);
+	border-width: 6px;
+	margin-left: -6px;
+}
+.apexcharts-xaxistooltip:before {
+	border-color: rgba(144, 164, 174, 0);
+	border-width: 7px;
+	margin-left: -7px;
+}
+
+.apexcharts-xaxistooltip-bottom:after, .apexcharts-xaxistooltip-bottom:before {
+  bottom: 100%;
+}
+
+.apexcharts-xaxistooltip-top:after, .apexcharts-xaxistooltip-top:before {
+  top: 100%;
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  border-bottom-color: #ECEFF1;
+}
+.apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-bottom.dark:after {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+.apexcharts-xaxistooltip-bottom.dark:before {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top:after {
+  border-top-color:#ECEFF1
+}
+.apexcharts-xaxistooltip-top:before {
+  border-top-color: #90A4AE;
+}
+.apexcharts-xaxistooltip-top.dark:after {
+  border-top-color:rgba(0, 0, 0, 0.5);
+}
+.apexcharts-xaxistooltip-top.dark:before {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.apexcharts-xaxistooltip.active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-yaxistooltip {
+  opacity: 0;
+  padding: 4px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+	background: #ECEFF1;
+  border: 1px solid #90A4AE;
+}
+
+.apexcharts-yaxistooltip.dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-yaxistooltip:after, .apexcharts-yaxistooltip:before {
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.apexcharts-yaxistooltip:after {
+	border-color: rgba(236, 239, 241, 0);
+	border-width: 6px;
+	margin-top: -6px;
+}
+.apexcharts-yaxistooltip:before {
+	border-color: rgba(144, 164, 174, 0);
+	border-width: 7px;
+	margin-top: -7px;
+}
+
+.apexcharts-yaxistooltip-left:after, .apexcharts-yaxistooltip-left:before {
+  left: 100%;
+}
+
+.apexcharts-yaxistooltip-right:after, .apexcharts-yaxistooltip-right:before {
+  right: 100%;
+}
+
+.apexcharts-yaxistooltip-left:after {
+  border-left-color: #ECEFF1;
+}
+.apexcharts-yaxistooltip-left:before {
+  border-left-color: #90A4AE;
+}
+.apexcharts-yaxistooltip-left.dark:after {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+.apexcharts-yaxistooltip-left.dark:before {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right:after {
+  border-right-color: #ECEFF1;
+}
+.apexcharts-yaxistooltip-right:before {
+  border-right-color: #90A4AE;
+}
+.apexcharts-yaxistooltip-right.dark:after {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+.apexcharts-yaxistooltip-right.dark:before {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip.active {
+  opacity: 1;
+}
+
+.apexcharts-xcrosshairs, .apexcharts-ycrosshairs {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xcrosshairs.active, .apexcharts-ycrosshairs.active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-ycrosshairs-hidden {
+  opacity: 0;
+}
+
+.apexcharts-zoom-rect {
+  pointer-events: none;
+}
+.apexcharts-selection-rect {
+  cursor: move;
+}
+
+.svg_select_points, .svg_select_points_rot {
+  opacity: 0;
+  visibility: hidden;
+}
+.svg_select_points_l, .svg_select_points_r {
+  cursor: ew-resize;
+  opacity: 1;
+  visibility: visible;
+  fill: #888;
+}
+.apexcharts-canvas.zoomable .hovering-zoom {
+  cursor: crosshair
+}
+.apexcharts-canvas.zoomable .hovering-pan {
+  cursor: move
+}
+
+.apexcharts-xaxis,
+.apexcharts-yaxis {
+  pointer-events: none;
+}
+
+.apexcharts-zoom-icon, 
+.apexcharts-zoom-in-icon,
+.apexcharts-zoom-out-icon,
+.apexcharts-reset-zoom-icon, 
+.apexcharts-pan-icon, 
+.apexcharts-selection-icon,
+.apexcharts-menu-icon, 
+.apexcharts-toolbar-custom-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  color: #6E8192;
+  text-align: center;
+}
+
+
+.apexcharts-zoom-icon svg, 
+.apexcharts-zoom-in-icon svg,
+.apexcharts-zoom-out-icon svg,
+.apexcharts-reset-zoom-icon svg,
+.apexcharts-menu-icon svg {
+  fill: #6E8192;
+}
+.apexcharts-selection-icon svg {
+  fill: #444;
+  transform: scale(0.76)
+}
+
+.dark .apexcharts-zoom-icon svg, 
+.dark .apexcharts-zoom-in-icon svg,
+.dark .apexcharts-zoom-out-icon svg,
+.dark .apexcharts-reset-zoom-icon svg, 
+.dark .apexcharts-pan-icon svg, 
+.dark .apexcharts-selection-icon svg,
+.dark .apexcharts-menu-icon svg, 
+.dark .apexcharts-toolbar-custom-icon svg{
+  fill: #f3f4f5;
+}
+
+.apexcharts-canvas .apexcharts-zoom-icon.selected svg, 
+.apexcharts-canvas .apexcharts-selection-icon.selected svg, 
+.apexcharts-canvas .apexcharts-reset-zoom-icon.selected svg {
+  fill: #008FFB;
+}
+.light .apexcharts-selection-icon:not(.selected):hover svg,
+.light .apexcharts-zoom-icon:not(.selected):hover svg, 
+.light .apexcharts-zoom-in-icon:hover svg, 
+.light .apexcharts-zoom-out-icon:hover svg, 
+.light .apexcharts-reset-zoom-icon:hover svg, 
+.light .apexcharts-menu-icon:hover svg {
+  fill: #333;
+}
+
+.apexcharts-selection-icon, .apexcharts-menu-icon {
+  position: relative;
+}
+.apexcharts-reset-zoom-icon {
+  margin-left: 5px;
+}
+.apexcharts-zoom-icon, .apexcharts-reset-zoom-icon, .apexcharts-menu-icon {
+  transform: scale(0.85);
+}
+
+.apexcharts-zoom-in-icon, .apexcharts-zoom-out-icon {
+  transform: scale(0.7)
+}
+
+.apexcharts-zoom-out-icon {
+  margin-right: 3px;
+}
+
+.apexcharts-pan-icon {
+  transform: scale(0.62);
+  position: relative;
+  left: 1px;
+  top: 0px;
+}
+.apexcharts-pan-icon svg {
+  fill: #fff;
+  stroke: #6E8192;
+  stroke-width: 2;
+}
+.apexcharts-pan-icon.selected svg {
+  stroke: #008FFB;
+}
+.apexcharts-pan-icon:not(.selected):hover svg {
+  stroke: #333;
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  top: 0px;
+  right: 3px;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0px 6px 2px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.apexcharts-toolbar svg {
+  pointer-events: none;
+}
+
+.apexcharts-menu {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  right: 10px;
+  opacity: 0;
+  min-width: 110px;
+  transition: 0.15s ease all;
+  pointer-events: none;
+}
+
+.apexcharts-menu.open {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-menu-item {
+  padding: 6px 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.light .apexcharts-menu-item:hover {
+  background: #eee;
+}
+.dark .apexcharts-menu {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .apexcharts-toolbar {
+    /*opacity: 0;*/
+  }
+
+  .apexcharts-canvas:hover .apexcharts-toolbar {
+    opacity: 1;
+  } 
+}
+
+.apexcharts-datalabel.hidden {
+  opacity: 0;
+}
+
+.apexcharts-pie-label,
+.apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+  cursor: default;
+  pointer-events: none;
+}
+
+.apexcharts-pie-label-delay {
+  opacity: 0;
+  animation-name: opaque;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.apexcharts-canvas .hidden {
+  opacity: 0;
+}
+
+.apexcharts-hide .apexcharts-series-points {
+  opacity: 0;
+}
+
+.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events, .apexcharts-radar-series path, .apexcharts-radar-series polygon {
+  pointer-events: none;
+}
+
+/* markers */
+
+.apexcharts-marker {
+  transition: 0.15s ease all;
+}
+
+@keyframes opaque {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}</style></head>
+
+<body>
+	<div class="splash">
+		<div class="splash-icon"></div>
+	</div>
+
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<a class="sidebar-brand" href="index.html">
+          <svg>
+            <use xlink:href="#ion-ios-pulse-strong"></use>
+          </svg>
+          Spark
+        </a>
+			<div class="sidebar-content">
+				<div class="sidebar-user">
+					<img src="img/avatars/avatar.jpg" class="img-fluid rounded-circle mb-2" alt="Linda Miller">
+					<div class="font-weight-bold">Linda Miller</div>
+					<small>Front-end Developer</small>
+				</div>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Main
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="dashboard.html">
+                <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">Dashboard</span>
+              </a>
+					</li>
+					<li class="sidebar-item">
+						<a href="#pages" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-file"></i> <span class="align-middle">Pages</span>
+              </a>
+						<ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-settings.html">Settings</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-clients.html">Clients <span class="sidebar-badge badge badge-pill badge-primary">New</span></a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-invoice.html">Invoice</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-pricing.html">Pricing</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-tasks.html">Tasks</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-blank.html">Blank Page</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#auth" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-sign-in-alt"></i> <span class="align-middle">Auth</span>
+              </a>
+						<ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-sign-in.html">Sign
+                    In</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-sign-up.html">Sign
+                    Up</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-reset-password.html">Reset Password</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-404.html">404
+                    Page</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="pages-500.html">500
+                    Page</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-header">
+						Elements
+					</li>
+					<li class="sidebar-item">
+						<a href="#ui" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-flask"></i> <span class="align-middle">User Interface</span>
+              </a>
+						<ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-alerts.html">Alerts</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Buttons</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-cards.html">Cards</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-general.html">General</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-grid.html">Grid</a>
+							</li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-modals.html">Modals</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-notifications.html">Notifications</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-tabs.html">Tabs</a>
+							</li>
+							<li class="sidebar-item"><a class="sidebar-link" href="ui-typography.html">Typography</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#charts" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-chart-pie"></i> <span class="align-middle">Charts</span>
+                <span class="sidebar-badge badge badge-pill badge-primary">New</span>
+              </a>
+						<ul id="charts" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="charts-chartjs.html">Chart.js</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="charts-apexcharts.html">ApexCharts</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#forms" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-check-square"></i> <span class="align-middle">Forms</span>
+              </a>
+						<ul id="forms" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="forms-layouts.html">Layouts</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="forms-basic-elements.html">Basic Elements</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="forms-advanced-elements.html">Advanced Elements</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="forms-input-groups.html">Input Groups</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="forms-editors.html">Editors</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="forms-validation.html">Validation</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="forms-wizard.html">Wizard</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#tables" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-table"></i> <span class="align-middle">Tables</span>
+              </a>
+						<ul id="tables" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="tables-bootstrap.html">Bootstrap</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="tables-datatables.html">DataTables</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#icons" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-heart"></i> <span class="align-middle">Icons</span>
+              </a>
+						<ul id="icons" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="icons-feather.html">Feather</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="icons-ion.html">Ion
+                    Icons</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="icons-font-awesome.html">Font Awesome</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="calendar.html">
+                <i class="align-middle mr-2 far fa-fw fa-calendar-alt"></i> <span class="align-middle">Calendar</span>
+                <span class="sidebar-badge badge badge-pill badge-success">Special</span>
+              </a>
+					</li>
+					<li class="sidebar-item">
+						<a href="#maps" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-map-marker-alt"></i> <span class="align-middle">Maps</span>
+              </a>
+						<ul id="maps" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="maps-google.html">Google Maps</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="maps-vector.html">Vector Maps</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-header">
+						Extras
+					</li>
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="documentation.html">
+                <i class="align-middle mr-2 fas fa-fw fa-book"></i> <span class="align-middle">Getting Started</span>
+              </a>
+					</li>
+					<li class="sidebar-item">
+						<a href="#layouts" data-toggle="collapse" class="sidebar-link collapsed">
+                <i class="align-middle mr-2 fas fa-fw fa-desktop"></i> <span class="align-middle">Layouts</span>
+              </a>
+						<ul id="layouts" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="layouts-sidebar-left.html">Left Sidebar</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="layouts-sidebar-right.html">Right Sidebar</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-theme">
+				<a class="sidebar-toggle d-flex mr-2">
+            <i class="hamburger align-self-center"></i>
+          </a>
+
+				<form class="form-inline d-none d-sm-inline-block">
+					<input class="form-control form-control-lite" type="text" placeholder="Search projects...">
+				</form>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle position-relative" href="#" id="messagesDropdown" data-toggle="dropdown">
+                <i class="align-middle fas fa-envelope-open"></i>
+              </a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										4 New Messages
+									</div>
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Michelle Bilodeau">
+											</div>
+											<div class="col-10 pl-2">
+												<div class="text-dark">Michelle Bilodeau</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+												<div class="text-muted small mt-1">5m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Kathie Burton">
+											</div>
+											<div class="col-10 pl-2">
+												<div class="text-dark">Kathie Burton</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+												<div class="text-muted small mt-1">30m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="Alexander Groves">
+											</div>
+											<div class="col-10 pl-2">
+												<div class="text-dark">Alexander Groves</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Daisy Seger">
+											</div>
+											<div class="col-10 pl-2">
+												<div class="text-dark">Daisy Seger</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all messages</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown ml-lg-2">
+							<a class="nav-link dropdown-toggle position-relative" href="#" id="alertsDropdown" data-toggle="dropdown">
+                <i class="align-middle fas fa-bell"></i>
+                <span class="indicator"></span>
+              </a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header">
+									4 New Notifications
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+												<i class="ml-1 text-danger fas fa-fw fa-bell"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Update completed</div>
+												<div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+												<i class="ml-1 text-warning fas fa-fw fa-envelope-open"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Lorem ipsum</div>
+												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
+												<div class="text-muted small mt-1">6h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+												<i class="ml-1 text-primary fas fa-fw fa-building"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Login from 192.186.1.1</div>
+												<div class="text-muted small mt-1">8h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+												<i class="ml-1 text-success fas fa-fw fa-bell-slash"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">New connection</div>
+												<div class="text-muted small mt-1">Anna accepted your request.</div>
+												<div class="text-muted small mt-1">12h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all notifications</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown ml-lg-2">
+							<a class="nav-link dropdown-toggle position-relative" href="#" id="userDropdown" data-toggle="dropdown">
+                <i class="align-middle fas fa-cog"></i>
+              </a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1 fas fa-fw fa-user"></i> View Profile</a>
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1 fas fa-fw fa-comments"></i> Contacts</a>
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1 fas fa-fw fa-chart-pie"></i> Analytics</a>
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1 fas fa-fw fa-cogs"></i> Settings</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1 fas fa-fw fa-arrow-alt-circle-right"></i> Sign out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</nav>
+			<main class="content">
+				<div class="container-fluid">
+
+					<div class="header">
+						<h1 class="header-title">
+							Getting Started
+						</h1>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Getting Started</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="row">
+						<div class="col-12 col-lg-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Introduction</h5>
+								</div>
+								<div class="card-body">
+
+									<div id="introduction">
+										<p class="lead">Hello, I hope you find this template useful. Spark has been crafted on top of Bootstrap 4. The included docs don't replace the official ones, but provide
+											a clear view of all extended styles and new components that this template provides on top of Bootstrap 4.</p>
+
+										<p>The docs includes information to understand how the theme is organized, how to make changes to the source code, and how to compile and extend it to fit
+											your needs.</p>
+										<p>Thanks, and good luck!</p>
+									</div>
+									<!-- /#introduction -->
+
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Quick start</h5>
+								</div>
+								<div class="card-body">
+
+									<div id="quick-start">
+										<p>The theme includes a custom Webpack file, which can be used to quickly recompile and minify theme assets while developing or for deployment. You'll need
+											to install <a href="https://nodejs.org/en/" target="_blank">Node.js</a> before using Webpack.</p>
+
+										<p class="mb-2">Once Node.js is installed, run <code>npm install</code> to install the rest of Spark's dependencies. All dependencies will be downloaded to the <code>node_modules</code>											directory.</p>
+										<pre class="snippet">npm install</pre>
+
+										<p class="mb-2">Now you're ready to modify the source files and generate new <code>dist/</code> files. Spark is using webpack and webpack-dev-server to automatically detect
+											file changes and start a local webserver at <code>http://localhost:8080</code>.</p>
+										<pre class="snippet">npm start</pre>
+									</div>
+									<!-- /#quick-start -->
+
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Build tools</h5>
+								</div>
+								<div class="card-body">
+
+									<div id="build-tools">
+										<p class="mb-2">Start a local webserver at <code>http://localhost:8080</code> and detect file changes:</p>
+										<pre class="snippet">npm start</pre>
+
+										<p class="mb-2">Automatically detect file changes without starting a local webserver:</p>
+										<pre class="snippet">npm run watch</pre>
+
+										<p class="mb-2">Compile, optimize, minify and uglify all source files to <code>dist/</code>:</p>
+										<pre class="snippet">npm run build</pre>
+									</div>
+									<!-- /#build-tools -->
+
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Basic Template &amp; Theming</h5>
+								</div>
+								<div class="card-body">
+
+									<div id="basic-template">
+										<p>This basic template can be used as a guideline for how to structure new pages while using Spark. Some meta tags and our CSS &amp; JS files are included
+											inside the template.</p>
+
+										<p class="mb-1">The following themes are available:</p>
+										<ul>
+											<li><code>modern</code></li>
+											<li><code>classic</code></li>
+											<li><code>light</code></li>
+											<li><code>dark</code></li>
+										</ul>
+
+										<hr class="my-3">
+
+										<pre class="snippet"><code class="html hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1, shrink-to-fit=no"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">""</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">""</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Spark<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{PATH}/dist/css/{THEME}.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"{PATH}/dist/js/app.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+									</div>
+									<!-- /#basic-template -->
+
+								</div>
+							</div>
+
+						</div>
+						<div class="col-12 col-lg-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Changelog</h5>
+								</div>
+								<div class="card-body">
+
+									<div id="changelog">
+										<h4 class="d-inline-block"><span class="badge badge-primary">v3.2.1</span></h4>
+										<h5 class="d-inline-block">– 5 August, 2019</h5>
+										<ul>
+											<li>Fixes issues with card height in IE11</li>
+											<li>Fixed issues with checkbox on sign in page</li>
+											<li>Added css support in webpack config</li>
+											<li>Added navbar indicator</li>
+											<li>Added pricing page (pages-pricing.html)</li>
+											<li>Added settings page (pages-settings.html)</li>
+											<li>Added clients page (pages-clients.html)</li>
+										</ul>
+
+										<h4 class="d-inline-block"><span class="badge badge-primary">v3.2.0</span></h4>
+										<h5 class="d-inline-block">– 10 May, 2019</h5>
+										<ul>
+											<li>Fixed IE11 bugs</li>
+											<li>Added classic variant</li>
+											<li>Added light variant</li>
+											<li>Added dark variant</li>
+											<li>Added landing page (index.html)</li>
+											<li>Upgraded various dependencies to LTS version</li>
+										</ul>
+
+										<h4 class="d-inline-block"><span class="badge badge-primary">v3.1.0</span></h4>
+										<h5 class="d-inline-block">– 23 March, 2019</h5>
+										<ul>
+											<li>Added multiple color schemes</li>
+											<li>Added calendar page (calendar.html)</li>
+											<li>Added tasks page (pages-tasks.html)</li>
+											<li>Added card actions</li>
+											<li>Added new sidebar</li>
+											<li>Swapped font with Nunito Sans</li>
+											<li>Removed box shadows</li>
+											<li>Removed deprecated morris.js library</li>
+											<li>Removed deprecated raphael library</li>
+											<li>Restructured sass files</li>
+											<li>Upgraded to Bootstrap 4.3.1</li>
+											<li>Upgraded various dependencies to LTS version</li>
+										</ul>
+
+										<h4 class="d-inline-block"><span class="badge badge-primary">v3.0.1</span></h4>
+										<h5 class="d-inline-block">– 6 January, 2019</h5>
+										<ul>
+											<li>Added Bootstrap spinners (ui-general.html)</li>
+											<li>Added Bootstrap switches (forms-basic-elements.html)</li>
+											<li>Moved from webpack-serve to webpack-dev-server</li>
+											<li>Upgraded to Bootstrap 4.2.1</li>
+											<li>Upgraded various dependencies to LTS version</li>
+										</ul>
+
+										<h4 class="d-inline-block"><span class="badge badge-primary">v3.0.0</span></h4>
+										<h5 class="d-inline-block">– 17 November, 2018</h5>
+										<ul>
+											<li>Re-created from scratch</li>
+											<li>New components and page designs</li>
+											<li>Optimized for speed and usability</li>
+											<li>Fully W3C-valid</li>
+											<li>Updated to Bootstrap 4.1.3</li>
+										</ul>
+									</div>
+									<!-- /#changelog -->
+
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Contents</h5>
+								</div>
+								<div class="card-body">
+									<div id="contents">
+										<p>Inside the zip-file you'll find the following directories and files. Both compiled and minified distrubution files, as well as the source files are included
+											in the package.</p>
+
+										<pre class="snippet">theme/
+  ├── .babelrc
+  ├── .gitignore
+  ├── package.json
+  ├── postcss.config.js
+  ├── webpack.config.js
+  ├── README.md
+  ├── docs/
+  ├── src/
+  │   ├── css/
+  │   │   ├── mixins/
+  │   │   ├── utilities/
+  │   │   └── app.scss
+  │   ├── js/
+  │   │   ├── modules/
+  │   │   ├── vendor/
+  │   │   └── app.js
+  │   │── fonts/
+  │   └── img/
+  └── dist/
+      ├── css/
+      │   └── app.css
+      ├── js/
+      │   └── app.js
+      ├── img/
+      └── fonts/</pre>
+									</div>
+									<!-- /#contents -->
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-8 text-left">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms of Service</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Contact</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-4 text-right">
+							<p class="mb-0">
+								© 2019 - <a href="dashboard.html" class="text-muted">Spark</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+	</div>
+
+	<svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol viewBox="0 0 512 512" id="ion-ios-pulse-strong">
+        <path d="M448 273.001c-21.27 0-39.296 13.999-45.596 32.999h-38.857l-28.361-85.417a15.999 15.999 0 0 0-15.183-10.956c-.112 0-.224 0-.335.004a15.997 15.997 0 0 0-15.049 11.588l-44.484 155.262-52.353-314.108C206.535 54.893 200.333 48 192 48s-13.693 5.776-15.525 13.135L115.496 306H16v31.999h112c7.348 0 13.75-5.003 15.525-12.134l45.368-182.177 51.324 307.94c1.229 7.377 7.397 11.92 14.864 12.344.308.018.614.028.919.028 7.097 0 13.406-3.701 15.381-10.594l49.744-173.617 15.689 47.252A16.001 16.001 0 0 0 352 337.999h51.108C409.973 355.999 427.477 369 448 369c26.511 0 48-22.492 48-49 0-26.509-21.489-46.999-48-46.999z">
+        </path>
+      </symbol>
+    </defs>
+  </svg>
+	<script src="js/app.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script>
+		$(function() {
+			$("pre code").each(function(i, block) {
+				hljs.highlightBlock(block);
+			});
+		});
+	</script>
+
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>
